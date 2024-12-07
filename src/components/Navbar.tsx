@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MagicCard } from "./ui/magic-card";
 import { customScrollTo } from "@/lib/utils";
-import { div } from "framer-motion/client";
 
 const TABS = [
   { name: "Home", target: "home" },

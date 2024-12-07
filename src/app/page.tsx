@@ -5,6 +5,7 @@ import TileThree from "@/components/tiles/TileThree";
 import TileTwo from "@/components/tiles/TileTwo";
 import { MagicCard } from "@/components/ui/magic-card";
 import ShinyButton from "@/components/ui/shiny-button";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function page() {
@@ -40,8 +41,8 @@ export default function page() {
             </MagicCard>
           </TileTwo>
           <div className="absolute -bottom-2 left-1/2 flex size-[140px] -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-7xl font-bold">
-            <img
-              src="https://studentcommunity.noroff.no/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Findyriot%2Fimage%2Fupload%2Fv1725286992%2Friot2%2Fhenma6hw17d7nprgm12a.png&w=128&q=100"
+            <Image
+              src="/cat_image.webp"
               alt=""
               width={140}
               height={140}
