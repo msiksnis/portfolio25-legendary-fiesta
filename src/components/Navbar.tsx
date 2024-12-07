@@ -21,6 +21,8 @@ const TABS = [
  */
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState(TABS[0].name);
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
+
   /** Indicates if the navbar is currently scrolling due to a user click. */
   const [isScrolling, setIsScrolling] = useState(false);
 
@@ -50,8 +52,8 @@ export default function Navbar() {
   /**
    * Handles user clicks on a tab.
    * - Updates activeTab immediately.
-   * - If "Contact" is clicked from a non-home route, navigates to "/" first.
-   * - Scrolls smoothly to the target section, if available.
+   * - If "Contact" or "Portfolio" is clicked from a non-home route, navigates to "/" first and sets scrollTarget.
+   * - Otherwise, if on home, it scrolls directly to the target section.
    *
    * @param tabName - The name of the tab clicked (e.g. "Home", "Portfolio", "Contact")
    * @param target - The target section ID (e.g. "home", "portfolio", "contact")
@@ -59,34 +61,20 @@ export default function Navbar() {
   const handleTabClick = (tabName: string, target: string) => {
     setActiveTab(tabName);
 
-    // If clicking "Contact" from a non-home route, navigate home first.
-    if (tabName === "Contact" && pathname !== "/") {
-      router.push("/");
-      return;
-    }
-
-    if (target === "home") {
-      router.push("/");
-    }
-
-    const section = document.getElementById(target);
-    if (section) {
-      // Scroll to the section with a 20px offset from the top.
-      const top = section.getBoundingClientRect().top + window.scrollY - 20;
-      setIsScrolling(true);
-      customScrollTo(top, () => {
-        setIsScrolling(false);
-      });
-    }
-  };
-
-  /**
-   * After route changes, if activeTab is "Contact" and we are at "/", automatically
-   * scroll to the contact section.
-   */
-  useEffect(() => {
-    if (pathname === "/" && activeTab === "Contact") {
-      const section = document.getElementById("contact");
+    if (pathname !== "/") {
+      // If not on home, but user clicked Portfolio or Contact, navigate home first
+      if (tabName === "Contact" || tabName === "Portfolio") {
+        setScrollTarget(target);
+        router.push("/");
+        return;
+      }
+      if (target === "home") {
+        router.push("/");
+        return;
+      }
+    } else {
+      // Already on home, scroll directly
+      const section = document.getElementById(target);
       if (section) {
         const top = section.getBoundingClientRect().top + window.scrollY - 20;
         setIsScrolling(true);
@@ -95,7 +83,25 @@ export default function Navbar() {
         });
       }
     }
-  }, [pathname, activeTab]);
+  };
+
+  /**
+   * After navigating back to "/", if we have a scrollTarget set (e.g. "contact" or "portfolio"),
+   * scroll to that section.
+   */
+  useEffect(() => {
+    if (pathname === "/" && scrollTarget) {
+      const section = document.getElementById(scrollTarget);
+      if (section) {
+        const top = section.getBoundingClientRect().top + window.scrollY - 20;
+        setIsScrolling(true);
+        customScrollTo(top, () => {
+          setIsScrolling(false);
+        });
+        setScrollTarget(null); // Clear target after scrolling
+      }
+    }
+  }, [pathname, scrollTarget]);
 
   /**
    * Sets up an Intersection Observer to determine which section is most visible
@@ -158,6 +164,20 @@ export default function Navbar() {
     }
   }, [activeTab]);
 
+  /**
+   * Handles clicks on the active tab highlight element.
+   * - If the active tab is "Home", do nothing. Else call handleTabClick with the active tab's target.
+   */
+  const handleActiveTabClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const tabName = event.currentTarget.getAttribute("data-tab");
+    if (tabName && tabName !== "Home") {
+      const matchingTab = TABS.find((tab) => tab.name === tabName);
+      if (matchingTab) {
+        handleTabClick(matchingTab.name, matchingTab.target);
+      }
+    }
+  };
+
   return (
     <div className="mx-auto mb-4 mt-8 flex h-12 w-fit items-center">
       <MagicCard className="rounded-full bg-card px-2.5 py-1.5">
@@ -195,6 +215,7 @@ export default function Navbar() {
                 <li key={tab.name}>
                   <button
                     data-tab={tab.name}
+                    onClick={handleActiveTabClick}
                     className="flex h-9 items-center whitespace-nowrap rounded-full px-6 py-2 font-medium opacity-100"
                     tabIndex={-1}
                   >
