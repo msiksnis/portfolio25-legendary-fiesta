@@ -8,11 +8,7 @@ const techStack = [
   "Figma",
 ];
 
-interface FavoriteToolsProps {
-  className?: string;
-}
-
-export default function FavoriteTools({ className }: FavoriteToolsProps) {
+export default function FavoriteTools() {
   return (
     <div className="flex flex-wrap gap-2">
       {techStack.map((tool) => (

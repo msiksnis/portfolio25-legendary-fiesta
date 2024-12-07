@@ -18,7 +18,7 @@ export default function page() {
                 <div className="text-6xl font-semibold tracking-tight text-white">
                   Hi 👋
                   <br />
-                  I'm Marty
+                  I&apos;m Marty
                 </div>
                 <h1 className="whitespace-nowrap pt-6 text-[2rem] font-semibold tracking-tight text-muted-foreground">
                   Frontend Developer
