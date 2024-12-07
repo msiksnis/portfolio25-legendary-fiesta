@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MagicCard } from "./ui/magic-card";
 import { customScrollTo } from "@/lib/utils";
+import { div } from "framer-motion/client";
 
 const TABS = [
   { name: "Home", target: "home" },
@@ -72,7 +73,7 @@ export default function Navbar() {
     const section = document.getElementById(target);
     if (section) {
       // Scroll to the section with a 20px offset from the top.
-      const top = section.getBoundingClientRect().top + window.scrollY - 80;
+      const top = section.getBoundingClientRect().top + window.scrollY - 20;
       setIsScrolling(true);
       customScrollTo(top, () => {
         setIsScrolling(false);

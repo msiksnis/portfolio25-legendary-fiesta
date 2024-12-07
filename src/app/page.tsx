@@ -123,8 +123,8 @@ export default function page() {
           <MagicCard className="rounded-4xl items-center justify-center px-16">
             <div className="mx-auto flex flex-col justify-center space-y-10 py-12">
               <div className="w-[600px] text-pretty text-center text-4xl font-semibold text-white">
-                Have a project in mind? Looking to hire a Frontend Developer? Or
-                just to say hi?
+                Looking to hire a Frontend Developer? Have a project in mind? Or
+                just to say Hi?
               </div>
               <ShinyButton className="mx-auto h-14 w-full max-w-96 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-2xl font-semibold leading-6 text-primary">
                 Contact
