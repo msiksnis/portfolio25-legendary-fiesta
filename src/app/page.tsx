@@ -1,4 +1,9 @@
+"use client";
+
 import FavoriteTools from "@/components/FavoriteTools";
+import ProjectOneCard from "@/components/projects/ProjectOneCard";
+import ProjectThreeCard from "@/components/projects/ProjectThreeCard";
+import ProjectTwoCard from "@/components/projects/ProjectTwoCard";
 import TileFour from "@/components/tiles/TileFour";
 import TileOne from "@/components/tiles/TileOne";
 import TileThree from "@/components/tiles/TileThree";
@@ -6,9 +11,19 @@ import TileTwo from "@/components/tiles/TileTwo";
 import { MagicCard } from "@/components/ui/magic-card";
 import ShinyButton from "@/components/ui/shiny-button";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function page() {
+  const [contactFormOpen, setContactFormOpen] = useState(false);
+  const router = useRouter();
+
+  const handleContactOneClick = () => {
+    setContactFormOpen(true);
+    const contact = document.getElementById("contact");
+    contact?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="mx-auto flex w-full max-w-4xl justify-center">
       <div className="flex w-full flex-col gap-4 px-10 pb-14">
@@ -34,7 +49,10 @@ export default function page() {
                   Have a project in mind, or looking to hire a Frontend
                   Developer?
                 </div>
-                <ShinyButton className="h-14 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-2xl font-semibold leading-6 text-primary">
+                <ShinyButton
+                  onClick={handleContactOneClick}
+                  className="h-14 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-2xl font-semibold leading-6 text-primary"
+                >
                   Contact
                 </ShinyButton>
               </div>
@@ -42,7 +60,7 @@ export default function page() {
           </TileTwo>
           <div className="absolute -bottom-2 left-1/2 flex size-[140px] -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-7xl font-bold">
             <Image
-              src="/cat_image.webp"
+              src="/me.png"
               alt=""
               width={140}
               height={140}
@@ -76,60 +94,58 @@ export default function page() {
             </TileFour>
           </div>
           {/* Tile 5 */}
-          <Link
+          <button
             id="portfolio"
-            href={"/project/holidaze"}
-            className="rounded-4xl w-3/4 scroll-m-4 bg-card"
+            type="button"
+            onClick={() => router.push("/project/holidaze")}
+            className="w-3/4 scroll-m-4 rounded-4xl bg-card"
           >
-            <MagicCard className="rounded-4xl justify-center">
-              <div className="p-10">
-                <div className="mb-6 text-center text-3xl font-semibold tracking-tight text-muted-foreground">
-                  Featured Project
-                </div>
-              </div>
+            <MagicCard className="justify-center rounded-4xl">
+              <ProjectOneCard />
             </MagicCard>
-          </Link>
+          </button>
         </div>
         {/* </div> */}
         <div className="flex gap-6">
           {/* Tile 6 */}
-          <Link
-            href={"/project/e-commerce"}
-            className="rounded-4xl h-96 w-full bg-card"
+          <button
+            type="button"
+            onClick={() => router.push("/project/auction-house")}
+            className="h-96 w-full rounded-4xl bg-card"
           >
-            <MagicCard className="rounded-4xl justify-center">
-              <div className="p-10">
-                <div className="mb-6 text-center text-3xl font-semibold tracking-tight text-muted-foreground">
-                  Project 2
-                </div>
-              </div>
+            <MagicCard className="justify-center rounded-4xl">
+              <ProjectTwoCard />
             </MagicCard>
-          </Link>
+          </button>
           {/* Tile 7 */}
-          <Link
-            href={"/project/auction-house"}
-            className="rounded-4xl h-96 w-full bg-card"
+          <button
+            type="button"
+            onClick={() => router.push("/project/e-commerce")}
+            className="h-96 w-full rounded-4xl bg-card"
           >
-            <MagicCard className="rounded-4xl justify-center">
-              <div className="p-10">
-                <div className="mb-6 text-center text-3xl font-semibold tracking-tight text-muted-foreground">
-                  Project 3
-                </div>
-              </div>
+            <MagicCard className="justify-center rounded-4xl">
+              <ProjectThreeCard />
             </MagicCard>
-          </Link>
+          </button>
         </div>
         {/* Tile 8 */}
-        <div id="contact" className="rounded-4xl w-full scroll-m-4 bg-card">
-          <MagicCard className="rounded-4xl items-center justify-center px-16">
+        <div id="contact" className="w-full scroll-m-4 rounded-4xl bg-card">
+          <MagicCard className="items-center justify-center rounded-4xl px-16">
             <div className="mx-auto flex flex-col justify-center space-y-10 py-12">
               <div className="w-[600px] text-pretty text-center text-4xl font-semibold text-white">
                 Looking to hire a Frontend Developer? Have a project in mind? Or
-                just to say Hi?
+                just want to say Hi?
               </div>
-              <ShinyButton className="mx-auto h-14 w-full max-w-96 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-2xl font-semibold leading-6 text-primary">
-                Contact
-              </ShinyButton>
+              {contactFormOpen ? (
+                "Contact form"
+              ) : (
+                <ShinyButton
+                  onClick={() => setContactFormOpen(true)}
+                  className="mx-auto h-14 w-full max-w-96 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 text-2xl font-semibold leading-6 text-primary"
+                >
+                  Contact
+                </ShinyButton>
+              )}
             </div>
           </MagicCard>
         </div>
