@@ -7,14 +7,14 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function NewPage() {
-  const [contactFormOpen, setContactFormOpen] = useState(false);
+  //   const [contactFormOpen, setContactFormOpen] = useState(false);
   const router = useRouter();
 
-  const handleContactOneClick = () => {
-    setContactFormOpen(true);
-    const contact = document.getElementById("contact");
-    contact?.scrollIntoView({ behavior: "smooth" });
-  };
+  //   const handleContactOneClick = () => {
+  //     setContactFormOpen(true);
+  //     const contact = document.getElementById("contact");
+  //     contact?.scrollIntoView({ behavior: "smooth" });
+  //   };
 
   return (
     <div className="pb-10">
@@ -47,7 +47,7 @@ export default function NewPage() {
                 </div>
                 <div className="flex justify-center">
                   <ShinyButton
-                    onClick={handleContactOneClick}
+                    // onClick={handleContactOneClick}
                     className="rounded-full bg-gradient-to-br from-amber-300 to-amber-500 px-12 py-3 text-2xl font-semibold text-primary md:px-20"
                   >
                     Contact
