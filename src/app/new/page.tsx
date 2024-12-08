@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function NewPage() {
   //   const [contactFormOpen, setContactFormOpen] = useState(false);
-  const router = useRouter();
+  //   const router = useRouter();
 
   //   const handleContactOneClick = () => {
   //     setContactFormOpen(true);
