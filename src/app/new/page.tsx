@@ -17,7 +17,7 @@ export default function NewPage() {
   };
 
   return (
-    <>
+    <div className="pb-10">
       <div className="relative mx-auto mt-2 grid aspect-square max-w-4xl grid-cols-12 gap-6">
         <div className="col-span-6 aspect-square rounded-4xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D]">
           <MagicCard>
@@ -76,6 +76,6 @@ export default function NewPage() {
           </MagicCard>
         </div>
       </div>
-    </>
+    </div>
   );
 }
