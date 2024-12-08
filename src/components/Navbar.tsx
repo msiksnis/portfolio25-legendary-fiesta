@@ -180,7 +180,7 @@ export default function Navbar() {
 
   return (
     <div className="mx-auto mb-4 mt-8 flex h-12 w-fit items-center">
-      <MagicCard className="rounded-full bg-card px-2.5 py-1.5">
+      <MagicCard className="rounded-full border bg-card px-2.5 py-1.5">
         <div
           className="relative flex flex-col"
           role="tablist"

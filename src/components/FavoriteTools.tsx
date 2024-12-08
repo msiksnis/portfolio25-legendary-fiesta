@@ -1,8 +1,8 @@
 const techStack = [
-  "JS",
-  "TypeScript",
+  "JavaScript",
   "React",
   "Next.js",
+  "TypeScript",
   "Tailwind CSS",
   "Prisma",
   "Figma",
@@ -14,7 +14,7 @@ export default function FavoriteTools() {
       {techStack.map((tool) => (
         <div
           key={tool}
-          className="w-fit rounded-full bg-amber-100 px-3 py-0.5 text-primary"
+          className="w-fit rounded-4xl border border-amber-300/90 px-3 py-0.5 text-amber-300/90"
         >
           {tool}
         </div>
