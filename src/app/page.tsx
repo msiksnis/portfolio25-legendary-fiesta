@@ -14,7 +14,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function page() {
+export default function HomePage() {
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const router = useRouter();
 
