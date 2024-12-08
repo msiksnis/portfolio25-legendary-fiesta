@@ -3,7 +3,6 @@
 import Avatar from "@/components/Avatar";
 import { MagicCard } from "@/components/ui/magic-card";
 import ShinyButton from "@/components/ui/shiny-button";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
