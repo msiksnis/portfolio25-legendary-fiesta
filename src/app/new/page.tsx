@@ -4,7 +4,6 @@ import Avatar from "@/components/Avatar";
 import { MagicCard } from "@/components/ui/magic-card";
 import ShinyButton from "@/components/ui/shiny-button";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function NewPage() {
   //   const [contactFormOpen, setContactFormOpen] = useState(false);
