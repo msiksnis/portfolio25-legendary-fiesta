@@ -57,7 +57,7 @@ export default function ProjectCard({
             {description}
           </p>
           <div className="grid place-content-center">
-            <div className="flex flex-wrap items-center justify-start gap-4 border">
+            <div className="flex flex-wrap items-center justify-start gap-4">
               {techTags?.map((tag) => (
                 <span
                   key={tag}
