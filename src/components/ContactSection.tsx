@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
 
