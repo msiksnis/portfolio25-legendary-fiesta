@@ -1,8 +1,6 @@
 import ProjectCard from "./ProjectCard";
 
-interface PortfolioSectionProps {}
-
-export default function PortfolioSection({}: PortfolioSectionProps) {
+export default function PortfolioSection() {
   return (
     <div id="portfolio" className="space-y-6 pb-2">
       <ProjectCard

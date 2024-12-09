@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
 
@@ -17,7 +18,7 @@ export default function ContactSection({
     >
       <MagicCard className="items-center justify-center rounded-4xl px-16">
         <div className="mx-auto flex flex-col justify-center space-y-10 py-12">
-          <div className="w-fit text-pretty font-semibold text-muted-foreground sm:text-3xl md:text-4xl">
+          <div className="w-fit text-pretty font-semibold text-white sm:text-3xl md:text-4xl">
             Looking to hire a Developer?
             <br />
             Have a project in mind?
@@ -25,7 +26,9 @@ export default function ContactSection({
             Or just want to say Hi?
           </div>
           {contactFormOpen ? (
-            "Contact form"
+            <div className="flex justify-center font-semibold text-muted-foreground sm:text-3xl md:text-4xl">
+              Contact form coming soon!
+            </div>
           ) : (
             <ShinyButton
               onClick={() => setContactFormOpen(true)}
