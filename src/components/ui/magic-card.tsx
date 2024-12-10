@@ -70,10 +70,13 @@ export function MagicCard({
   }, [gradientSize, mouseX, mouseY]);
 
   return (
-    <div ref={cardRef} className={cn("relative grid h-full w-full", className)}>
-      <div className="z-10">{children}</div>
+    <div
+      ref={cardRef}
+      className={cn("relative grid h-full w-full overflow-hidden", className)}
+    >
+      <div className="z-10 w-full">{children}</div>
       <motion.div
-        className="absolute -inset-px"
+        className="absolute -inset-px w-full"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)

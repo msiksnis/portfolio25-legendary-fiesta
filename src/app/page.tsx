@@ -1,6 +1,6 @@
 "use client";
 
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/contact/ContactSection";
 import FavoriteTools from "@/components/FavoriteTools";
 import HomeSection from "@/components/HomeSection";
 import PortfolioSection from "@/components/portfolio/PortfolioSection";

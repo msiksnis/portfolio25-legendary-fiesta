@@ -60,7 +60,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border selection:bg-primary selection:text-white;
   }
   body {
     @apply bg-[#000100] px-4 text-foreground text-white;

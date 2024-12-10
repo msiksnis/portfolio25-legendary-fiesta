@@ -38,7 +38,7 @@ export default function HomeSection({ handleClick }: HomeSectionProps) {
               <div className="flex justify-center">
                 <ShinyButton
                   onClick={handleClick}
-                  className="rounded-full bg-gradient-to-br from-amber-300 to-amber-500 px-12 py-3 text-2xl font-semibold text-primary md:px-20"
+                  className="px-12 py-3 md:px-20"
                 >
                   Contact
                 </ShinyButton>

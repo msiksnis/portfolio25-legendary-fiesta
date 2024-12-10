@@ -1,3 +1,23 @@
 {
-  "cSpell.words": ["ecommerce", "popp"]
+  "cSpell.words": ["ecommerce", "popp"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#facf69",
+    "activityBar.background": "#facf69",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#059a6e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#facf69",
+    "statusBar.background": "#f9bf38",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#f7af07",
+    "statusBarItem.remoteBackground": "#f9bf38",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#f9bf38",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f9bf3899",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#F9BF38"
 }
