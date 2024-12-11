@@ -1,12 +1,24 @@
+"use client";
+
+import { useContactFormStore } from "@/hooks/useContactFormStore";
 import Avatar from "./Avatar";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
 
-interface HomeSectionProps {
-  handleClick: () => void;
-}
+export default function HomeSection() {
+  const setContactFormOpen = useContactFormStore(
+    (state) => state.setContactFormOpen,
+  );
 
-export default function HomeSection({ handleClick }: HomeSectionProps) {
+  const handleContactOneClick = () => {
+    setContactFormOpen(true);
+
+    setTimeout(() => {
+      const contact = document.getElementById("contact");
+      contact?.scrollIntoView({ behavior: "smooth" });
+    }, 0);
+  };
+
   return (
     <div id="home" className="relative grid aspect-square grid-cols-12 gap-6">
       <div className="col-span-6 aspect-square rounded-4xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D]">
@@ -37,7 +49,7 @@ export default function HomeSection({ handleClick }: HomeSectionProps) {
               </div>
               <div className="flex justify-center">
                 <ShinyButton
-                  onClick={handleClick}
+                  onClick={handleContactOneClick}
                   className="px-12 py-3 md:px-20"
                 >
                   Contact
