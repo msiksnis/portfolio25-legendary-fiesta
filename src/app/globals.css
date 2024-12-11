@@ -66,3 +66,11 @@
     @apply bg-[#000100] px-4 text-foreground text-white;
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar.overflow-auto {
+  scrollbar-width: none; /* Firefox */
+}

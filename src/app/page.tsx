@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-4xl space-y-4 pb-10">
       <HomeSection />
-      <Marquee className="pointer-events-none [--duration:50s]">
+      <Marquee pauseOnHover className="[--duration:50s]">
         <FavoriteTools />
       </Marquee>
       <PortfolioSection />

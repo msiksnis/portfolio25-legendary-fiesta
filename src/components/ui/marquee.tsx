@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
@@ -18,14 +21,77 @@ export default function Marquee({
   repeat = 4,
   ...props
 }: MarqueeProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState<number>(0);
+  const [scrollStart, setScrollStart] = useState<number>(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      setIsDragging(true);
+      // For horizontal drag, use e.pageX. For vertical drag, use e.pageY.
+      const pos = vertical ? e.pageY : e.pageX;
+      setStartPosition(
+        pos - (vertical ? container.offsetTop : container.offsetLeft),
+      );
+      setScrollStart(vertical ? container.scrollTop : container.scrollLeft);
+      // Change cursor to grabbing
+      container.style.cursor = "grabbing";
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || !container) return;
+      e.preventDefault(); // Prevent text selection
+      const pos = vertical ? e.pageY : e.pageX;
+      const delta =
+        pos -
+        (vertical ? container.offsetTop : container.offsetLeft) -
+        startPosition;
+
+      if (vertical) {
+        container.scrollTop = scrollStart - delta;
+      } else {
+        container.scrollLeft = scrollStart - delta;
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      if (container) {
+        container.style.cursor = "";
+      }
+    };
+
+    // Attach event listeners
+    container.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      container.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging, startPosition, scrollStart, vertical]);
+
   return (
     <div
       {...props}
+      ref={containerRef}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
+          // Use overflow auto so we can scroll/drag through content
+          "no-scrollbar overflow-x-auto": !vertical,
+          "overflow-y-auto": vertical,
+          // While dragging, or on hover (if pauseOnHover), we may want to pause animation
+          "cursor-grab": !isDragging, // show grab cursor when not dragging
         },
         className,
       )}
@@ -36,10 +102,12 @@ export default function Marquee({
           <div
             key={i}
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
+              "animate-marquee flex-row": !vertical && !isDragging,
+              "animate-marquee-vertical flex-col": vertical && !isDragging,
+              "group-hover:[animation-play-state:paused]":
+                pauseOnHover && !isDragging,
               "[animation-direction:reverse]": reverse,
+              "[animation-play-state:paused]": isDragging, // Pause animation while dragging
             })}
           >
             {children}
