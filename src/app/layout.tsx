@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Developer Marty",
-  description: "Frontend Developer Portfolio",
+  description: "Personal portfolio site of developer Marty",
 };
 
 export default function RootLayout({
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster />
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <div className="flex-1">

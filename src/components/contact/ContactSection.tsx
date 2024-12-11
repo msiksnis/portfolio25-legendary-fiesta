@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MagicCard } from "../ui/magic-card";
 import ShinyButton from "../ui/shiny-button";
 import ContactForm from "./ContactForm";
@@ -11,6 +12,8 @@ export default function ContactSection({
   contactFormOpen,
   setContactFormOpen,
 }: ContactSectionProps) {
+  const [isMessageSent, setIsMessageSent] = useState<boolean>(false);
+
   return (
     <div
       id="contact"
@@ -24,13 +27,16 @@ export default function ContactSection({
             just want to say Hi?
           </div>
           {contactFormOpen ? (
-            <ContactForm setContactFormOpen={setContactFormOpen} />
+            <ContactForm
+              setContactFormOpen={setContactFormOpen}
+              setIsMessageSent={setIsMessageSent}
+            />
           ) : (
             <ShinyButton
               onClick={() => setContactFormOpen(true)}
               className="w-full"
             >
-              Contact
+              {isMessageSent ? "Message Sent!" : "Contact Me"}
             </ShinyButton>
           )}
         </div>

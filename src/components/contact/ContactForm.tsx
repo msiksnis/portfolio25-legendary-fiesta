@@ -18,12 +18,21 @@ import { cn } from "@/lib/utils";
 import { Input } from "../ui/input";
 import { AutosizeTextarea } from "../ui/textarea";
 import ShinyButton from "../ui/shiny-button";
+import { useState } from "react";
+import toast from "react-hot-toast";
+import { Send } from "lucide-react";
 
 interface ContactFormProps {
   setContactFormOpen: (value: boolean) => void;
+  setIsMessageSent: (value: boolean) => void;
 }
 
-export default function ContactForm({ setContactFormOpen }: ContactFormProps) {
+export default function ContactForm({
+  setContactFormOpen,
+  setIsMessageSent,
+}: ContactFormProps) {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const { focusStates, handleFocus } = useFocusStates<
     "name" | "email" | "message"
   >();
@@ -35,10 +44,37 @@ export default function ContactForm({ setContactFormOpen }: ContactFormProps) {
 
   const { control, handleSubmit, formState, reset } = form;
 
-  const onSubmit = (data: ContactFormValues) => {
-    console.log(data);
-    reset();
-    setContactFormOpen(false);
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent! Thank You!");
+        setContactFormOpen(false);
+        setIsMessageSent(true);
+        reset();
+      } else {
+        throw new Error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      if (typeof error === "string") {
+        toast.error(error);
+      } else if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unknown error occurred");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -174,8 +210,19 @@ export default function ContactForm({ setContactFormOpen }: ContactFormProps) {
           )}
         />
         <div className="mx-auto pt-6">
-          <ShinyButton type="submit" className="px-12 py-3 md:px-20">
-            Send
+          <ShinyButton
+            disabled={isLoading}
+            type="submit"
+            className={cn(
+              "w-60 transform rounded-full py-3 transition-all duration-500 ease-in-out",
+              { "animate-bounce-slow h-14 w-14 opacity-70": isLoading },
+            )}
+          >
+            {!isLoading ? (
+              <span>Send</span>
+            ) : (
+              <Send className="flex size-6 w-full items-center justify-center pr-0.5 pt-0.5" />
+            )}
           </ShinyButton>
         </div>
       </form>
