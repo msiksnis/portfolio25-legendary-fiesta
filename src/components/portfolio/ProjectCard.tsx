@@ -1,6 +1,6 @@
 "use client";
 
-import { cn, useScreenSizes } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import ProjectLinkButton from "../ProjectLinkButton";
 import { MagicCard } from "../ui/magic-card";
@@ -26,8 +26,6 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const router = useRouter();
 
-  const { isMobile } = useScreenSizes();
-
   return (
     <button
       id="portfolio"
@@ -35,13 +33,7 @@ export default function ProjectCard({
       onClick={() => router.push(projectLink)}
       className="group/card relative flex h-full min-h-56 w-full flex-col rounded-4xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D]"
     >
-      <MagicCard
-        className={cn(
-          "rounded-4xl px-16 py-10",
-          { "px-6": isMobile },
-          className,
-        )}
-      >
+      <MagicCard className={cn("rounded-4xl px-6 py-10 sm:px-16", className)}>
         <div className="flex h-full flex-col justify-between space-y-10">
           <div className="flex justify-center gap-6">
             <ProjectLinkButton
