@@ -77,22 +77,22 @@ export default function ProjectCard({
       <img
         src="/corner.svg"
         alt=""
-        className="absolute right-0 top-0 opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-x-1 group-hover/card:translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50"
+        className="absolute right-0 top-0 hidden opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-x-1 group-hover/card:translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50 sm:block"
       />
       <img
         src="/corner.svg"
         alt=""
-        className="absolute bottom-0 right-0 rotate-90 opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-x-1 group-hover/card:-translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50"
+        className="absolute bottom-0 right-0 hidden rotate-90 opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-x-1 group-hover/card:-translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50 sm:block"
       />
       <img
         src="/corner.svg"
         alt=""
-        className="absolute bottom-0 left-0 rotate-180 opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-y-1 group-hover/card:translate-x-1 group-hover/card:scale-75 group-hover/card:opacity-50"
+        className="absolute bottom-0 left-0 hidden rotate-180 opacity-0 transition-all delay-75 duration-500 group-hover/card:-translate-y-1 group-hover/card:translate-x-1 group-hover/card:scale-75 group-hover/card:opacity-50 sm:block"
       />
       <img
         src="/corner.svg"
         alt=""
-        className="absolute left-0 top-0 rotate-[270deg] opacity-0 transition-all delay-75 duration-500 group-hover/card:translate-x-1 group-hover/card:translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50"
+        className="absolute left-0 top-0 hidden rotate-[270deg] opacity-0 transition-all delay-75 duration-500 group-hover/card:translate-x-1 group-hover/card:translate-y-1 group-hover/card:scale-75 group-hover/card:opacity-50 sm:block"
       />
     </button>
   );
