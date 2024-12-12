@@ -9,7 +9,7 @@ export default function Avatar() {
         <div className="absolute -right-5 top-1/2 h-6 w-3 -translate-y-1/2 bg-primary"></div>
         <Image
           src={"/me.png"}
-          alt=""
+          alt="pic of me"
           width={140}
           height={140}
           className="size-28 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 md:size-32 lg:size-40"

@@ -24,7 +24,7 @@ export default function HomeSection() {
       id="home"
       className="relative grid aspect-square grid-cols-12 gap-4 sm:gap-6"
     >
-      <div className="col-span-12 rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:col-span-6 sm:aspect-square sm:rounded-4xl">
+      <div className="col-span-12 rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:col-span-6 sm:aspect-square sm:rounded-4xl sm:py-0">
         <MagicCard>
           <div className="flex h-full">
             <div className="m-auto sm:pb-10">
