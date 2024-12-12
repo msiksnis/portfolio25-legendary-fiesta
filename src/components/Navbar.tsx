@@ -187,8 +187,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-4 z-50 mx-auto mb-4 mt-4 flex h-12 w-full items-center sm:static sm:mb-6 sm:mt-8 sm:w-fit">
-      <MagicCard className="rounded-full border bg-card px-2.5 py-1.5">
+    <div className="sticky top-4 z-50 mx-auto mb-4 mt-4 flex w-full items-center sm:static sm:mb-6 sm:mt-8 sm:w-fit">
+      <MagicCard className="rounded-full border bg-card px-2 py-1.5">
         <div
           className="relative flex flex-col"
           role="tablist"
@@ -201,7 +201,7 @@ export default function Navbar() {
                   ref={activeTab === tab.name ? activeTabElementRef : null}
                   data-tab={tab.name}
                   onClick={() => handleTabClick(tab.name, tab.target)}
-                  className={`flex h-9 items-center whitespace-nowrap rounded-full px-6 py-2 font-medium text-muted-foreground ${
+                  className={`flex h-9 items-center whitespace-nowrap rounded-full px-6 text-base font-medium text-muted-foreground ${
                     activeTab === tab.name ? "text-primary" : ""
                   }`}
                 >
@@ -224,7 +224,7 @@ export default function Navbar() {
                   <button
                     data-tab={tab.name}
                     onClick={handleActiveTabClick}
-                    className="flex h-9 items-center whitespace-nowrap rounded-full px-6 py-2 font-medium opacity-100"
+                    className="flex h-9 items-center whitespace-nowrap rounded-full px-6 font-medium opacity-100"
                     tabIndex={-1}
                   >
                     {tab.name}
