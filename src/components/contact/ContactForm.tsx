@@ -81,7 +81,7 @@ export default function ContactForm({
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-8"
+        className="flex w-full flex-col space-y-8"
       >
         <FormField
           control={control}
@@ -215,7 +215,7 @@ export default function ContactForm({
             type="submit"
             className={cn(
               "w-60 transform rounded-full py-3 transition-all duration-500 ease-in-out",
-              { "animate-bounce-slow h-14 w-14 opacity-70": isLoading },
+              { "h-14 w-14 animate-bounce-slow opacity-70": isLoading },
             )}
           >
             {!isLoading ? (

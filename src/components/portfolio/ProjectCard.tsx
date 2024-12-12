@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, useScreenSizes } from "@/lib/utils";
 import { useRouter } from "next/navigation";
 import ProjectLinkButton from "../ProjectLinkButton";
 import { MagicCard } from "../ui/magic-card";
@@ -26,6 +26,8 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const router = useRouter();
 
+  const { isMobile } = useScreenSizes();
+
   return (
     <button
       id="portfolio"
@@ -33,7 +35,13 @@ export default function ProjectCard({
       onClick={() => router.push(projectLink)}
       className="group/card relative flex h-full min-h-56 w-full flex-col rounded-4xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D]"
     >
-      <MagicCard className={cn("rounded-4xl px-16 py-10", className)}>
+      <MagicCard
+        className={cn(
+          "rounded-4xl px-16 py-10",
+          { "px-6": isMobile },
+          className,
+        )}
+      >
         <div className="flex h-full flex-col justify-between space-y-10">
           <div className="flex justify-center gap-6">
             <ProjectLinkButton
@@ -49,10 +57,10 @@ export default function ProjectCard({
               arrowSize={28}
             />
           </div>
-          <h2 className="font-semibold leading-tight text-white sm:text-3xl md:text-4xl">
+          <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
             {title}
           </h2>
-          <p className="font-semibold text-muted-foreground sm:text-3xl md:text-4xl">
+          <p className="text-3xl font-semibold text-muted-foreground md:text-4xl">
             {description}
           </p>
           <div className="flex justify-center">

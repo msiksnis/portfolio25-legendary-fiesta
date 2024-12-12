@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MagicCard } from "./ui/magic-card";
-import { customScrollTo } from "@/lib/utils";
+import { customScrollTo, useScreenSizes } from "@/lib/utils";
 
 const TABS = [
   { name: "Home", target: "home" },
@@ -33,6 +33,8 @@ export default function Navbar() {
 
   const router = useRouter();
   const pathname = usePathname();
+
+  const { isMobile } = useScreenSizes();
 
   /**
    * Synchronize the active tab based on the current route.
@@ -76,7 +78,10 @@ export default function Navbar() {
       // Already on home, scroll directly
       const section = document.getElementById(target);
       if (section) {
-        const top = section.getBoundingClientRect().top + window.scrollY - 20;
+        const top =
+          section.getBoundingClientRect().top +
+          window.scrollY -
+          (isMobile ? 80 : 20);
         setIsScrolling(true);
         customScrollTo(top, () => {
           setIsScrolling(false);
@@ -93,7 +98,10 @@ export default function Navbar() {
     if (pathname === "/" && scrollTarget) {
       const section = document.getElementById(scrollTarget);
       if (section) {
-        const top = section.getBoundingClientRect().top + window.scrollY - 20;
+        const top =
+          section.getBoundingClientRect().top +
+          window.scrollY -
+          (isMobile ? 80 : 20);
         setIsScrolling(true);
         customScrollTo(top, () => {
           setIsScrolling(false);
@@ -179,14 +187,14 @@ export default function Navbar() {
   };
 
   return (
-    <div className="mx-auto mb-6 mt-8 flex h-12 w-fit items-center">
+    <div className="sticky top-4 z-50 mx-auto mb-4 mt-4 flex h-12 w-full items-center sm:static sm:mb-6 sm:mt-8 sm:w-fit">
       <MagicCard className="rounded-full border bg-card px-2.5 py-1.5">
         <div
           className="relative flex flex-col"
           role="tablist"
           aria-label="Navigation Tabs"
         >
-          <ul className="flex w-full justify-center gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
+          <ul className="flex w-full justify-between gap-x-2 sm:justify-center md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
             {TABS.map((tab) => (
               <li key={tab.name}>
                 <button
@@ -210,7 +218,7 @@ export default function Navbar() {
             ref={containerRef}
             style={{ clipPath: "inset(0 75% 0 0 round 17px)" }}
           >
-            <ul className="flex w-full justify-center gap-x-2 bg-gradient-to-br from-amber-300 to-amber-500 text-primary shadow md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
+            <ul className="flex w-full justify-between gap-x-2 bg-gradient-to-br from-amber-300 to-amber-500 text-primary shadow sm:justify-center md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
               {TABS.map((tab) => (
                 <li key={tab.name}>
                   <button

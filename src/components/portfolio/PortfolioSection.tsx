@@ -16,7 +16,7 @@ export default function PortfolioSection() {
           "TanStack Query",
         ]}
       />
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid gap-6 sm:grid-cols-2">
         <ProjectCard
           projectLink="/project/auction-house"
           demoLink="https://msiksnis-sp2-auction.vercel.app/"

@@ -20,24 +20,27 @@ export default function HomeSection() {
   };
 
   return (
-    <div id="home" className="relative grid aspect-square grid-cols-12 gap-6">
-      <div className="col-span-6 aspect-square rounded-4xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D]">
+    <div
+      id="home"
+      className="relative grid aspect-square grid-cols-12 gap-4 sm:gap-6"
+    >
+      <div className="col-span-12 rounded-4xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:col-span-6 sm:aspect-square">
         <MagicCard>
           <div className="flex h-full">
-            <div className="m-auto pb-10">
+            <div className="m-auto sm:pb-10">
               <div className="text-6xl font-semibold tracking-tight text-white md:text-7xl">
                 Hi 👋
                 <br />
                 I&apos;m Marty
               </div>
-              <h1 className="mx-auto flex whitespace-nowrap pt-6 text-3xl font-semibold tracking-tight text-muted-foreground md:text-4xl">
+              <h1 className="mx-auto flex whitespace-nowrap pt-4 text-3xl font-semibold tracking-tight text-muted-foreground sm:pt-6 md:text-4xl">
                 Frontend Developer
               </h1>
             </div>
           </div>
         </MagicCard>
       </div>
-      <div className="col-span-6 aspect-square rounded-4xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D]">
+      <div className="hidden aspect-square rounded-4xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:col-span-6 sm:block">
         <MagicCard>
           <div className="flex h-full">
             <div className="m-auto space-y-10">
@@ -62,15 +65,18 @@ export default function HomeSection() {
       <Avatar />
       <div className="col-span-12 w-full rounded-4xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d]">
         <MagicCard>
-          <div className="flex aspect-[2/1] h-full items-center justify-center pt-10">
-            <div className="w-fit font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
+          <div className="flex h-full items-center justify-center p-6 sm:aspect-[2/1] sm:p-0 sm:pt-10">
+            <div className="w-fit text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               <p className="">
-                A proud graduate of Bethel School of <br />
-                Technology (2019) and Noroff School <br />
+                A proud graduate of Bethel School of{" "}
+                <br className="hidden sm:block" />
+                Technology (2019) and Noroff School{" "}
+                <br className="hidden sm:block" />
                 of Technology and Digital Media (2024).
               </p>
               <p className="mt-6 text-muted-foreground">
-                I enjoy crafting beautiful, pixel-perfect <br />
+                I enjoy crafting beautiful, pixel-perfect{" "}
+                <br className="hidden sm:block" />
                 websites and seamless user interfaces.
               </p>
             </div>
