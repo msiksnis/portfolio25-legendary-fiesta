@@ -1,3 +1,4 @@
+import BlurFade from "./ui/blur-fade";
 import Marquee from "./ui/marquee";
 
 const techStack = [
@@ -14,7 +15,7 @@ const techStack = [
 
 export default function FavoriteTools() {
   return (
-    <div className="relative">
+    <BlurFade inView className="relative">
       <Marquee pauseOnHover className="[--duration:50s]">
         <div className="flex flex-wrap gap-2">
           {techStack.map((tool) => (
@@ -29,6 +30,6 @@ export default function FavoriteTools() {
       </Marquee>
       <div className="absolute left-0 top-0 h-12 w-6 bg-gradient-to-r from-primary to-transparent"></div>
       <div className="absolute right-0 top-0 h-12 w-6 bg-gradient-to-r from-transparent to-primary"></div>
-    </div>
+    </BlurFade>
   );
 }
