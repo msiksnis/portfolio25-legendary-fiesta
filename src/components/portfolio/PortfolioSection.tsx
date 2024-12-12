@@ -23,7 +23,7 @@ export default function PortfolioSection() {
           repoLink="https://github.com/msiksnis/msiksnis-sp2-auction"
           title="Auction House"
           techTags={["Next.js", "TailwindCSS", "TypeScript"]}
-          className="px-6"
+          className="sm:px-6"
         />
         <ProjectCard
           projectLink="/project/e-commerce"
@@ -31,7 +31,7 @@ export default function PortfolioSection() {
           repoLink="https://github.com/msiksnis/caps-store-musical-winner"
           title="E-commerce App"
           techTags={["React", "TailwindCSS", "TypeScript", "Framer Motion"]}
-          className="px-6"
+          className="sm:px-6"
         />
       </div>
     </div>

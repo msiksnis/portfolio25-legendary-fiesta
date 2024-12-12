@@ -31,9 +31,14 @@ export default function ProjectCard({
       id="portfolio"
       type="button"
       onClick={() => router.push(projectLink)}
-      className="group/card relative flex h-full min-h-56 w-full flex-col rounded-4xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D]"
+      className="group/card relative flex h-full min-h-56 w-full flex-col rounded-2xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
     >
-      <MagicCard className={cn("rounded-4xl px-6 py-10 sm:px-16", className)}>
+      <MagicCard
+        className={cn(
+          "rounded-2xl px-4 py-10 sm:rounded-4xl sm:px-16",
+          className,
+        )}
+      >
         <div className="flex h-full flex-col justify-between space-y-10">
           <div className="flex justify-center gap-6">
             <ProjectLinkButton
@@ -60,7 +65,7 @@ export default function ProjectCard({
               {techTags?.map((tag) => (
                 <span
                   key={tag}
-                  className="w-fit rounded-4xl border border-amber-200 px-3 py-0.5 text-amber-200"
+                  className="w-fit rounded-2xl border border-amber-200 px-3 py-0.5 text-amber-200 sm:rounded-4xl"
                 >
                   {tag}
                 </span>
