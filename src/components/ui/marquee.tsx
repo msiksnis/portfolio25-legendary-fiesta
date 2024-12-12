@@ -66,7 +66,6 @@ export default function Marquee({
       }
     };
 
-    // Attach event listeners
     container.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
@@ -87,11 +86,9 @@ export default function Marquee({
         {
           "flex-row": !vertical,
           "flex-col": vertical,
-          // Use overflow auto so we can scroll/drag through content
           "no-scrollbar overflow-x-auto": !vertical,
           "overflow-y-auto": vertical,
-          // While dragging, or on hover (if pauseOnHover), we may want to pause animation
-          "cursor-grab": !isDragging, // show grab cursor when not dragging
+          "cursor-grab": !isDragging,
         },
         className,
       )}
@@ -107,7 +104,7 @@ export default function Marquee({
               "group-hover:[animation-play-state:paused]":
                 pauseOnHover && !isDragging,
               "[animation-direction:reverse]": reverse,
-              "[animation-play-state:paused]": isDragging, // Pause animation while dragging
+              "[animation-play-state:paused]": isDragging,
             })}
           >
             {children}
