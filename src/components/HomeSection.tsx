@@ -45,7 +45,7 @@ export default function HomeSection() {
         <MagicCard>
           <div className="flex h-full">
             <div className="m-auto space-y-10">
-              <h2 className="text-balance font-semibold text-muted-foreground sm:-mt-10 sm:text-3xl md:text-4xl">
+              <h2 className="text-balance text-2xl font-semibold text-muted-foreground sm:-mt-4 md:-mt-10 md:text-3xl lg:text-4xl">
                 Have a project in <br />
                 mind, or looking <br />
                 to hire a Frontend <br />

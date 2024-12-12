@@ -15,7 +15,7 @@ const techStack = [
 
 export default function FavoriteTools() {
   return (
-    <BlurFade inView className="relative">
+    <BlurFade delay={0.4} className="relative">
       <Marquee pauseOnHover className="[--duration:50s]">
         <div className="flex flex-wrap gap-2">
           {techStack.map((tool) => (
