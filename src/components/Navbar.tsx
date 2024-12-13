@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { MagicCard } from "./ui/magic-card";
-import { customScrollTo, useScreenSizes } from "@/lib/utils";
+import { customScrollTo } from "@/lib/utils";
+import { useScreenSizes } from "@/hooks/useResponsive";
 
 const TABS = [
   { name: "Home", target: "home" },

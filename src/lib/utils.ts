@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { useMediaQuery } from "react-responsive";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -44,11 +43,3 @@ export function customScrollTo(
 
   requestAnimationFrame(animate);
 }
-
-export const useScreenSizes = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-
-  return {
-    isMobile,
-  };
-};
