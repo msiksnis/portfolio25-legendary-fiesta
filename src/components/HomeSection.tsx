@@ -21,55 +21,54 @@ export default function HomeSection() {
   };
 
   return (
-    <div
-      id="home"
-      className="relative grid aspect-square grid-cols-12 gap-4 sm:gap-6"
-    >
-      <BlurFade className="col-span-12 rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:col-span-6 sm:aspect-square sm:rounded-4xl sm:py-0">
-        <MagicCard>
-          <div className="flex h-full">
-            <div className="m-auto sm:pb-10">
-              <div className="text-6xl font-semibold tracking-tight text-white md:text-7xl">
-                Hi 👋
-                <br />
-                I&apos;m Marty
-              </div>
-              <h1 className="mx-auto flex whitespace-nowrap pt-4 text-3xl font-semibold tracking-tight text-muted-foreground sm:pt-6 md:text-4xl">
-                Frontend Developer
-              </h1>
-            </div>
-          </div>
-        </MagicCard>
-      </BlurFade>
-      <BlurFade className="hidden aspect-square rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:col-span-6 sm:block sm:rounded-4xl">
-        <MagicCard>
-          <div className="flex h-full">
-            <div className="m-auto space-y-10">
-              <h2 className="text-balance text-2xl font-semibold text-muted-foreground sm:-mt-4 md:-mt-10 md:text-3xl lg:text-4xl">
-                Have a project in <br />
-                mind, or looking <br />
-                to hire a Frontend <br />
-                Developer?
-              </h2>
-              <div className="flex justify-center">
-                <ShinyButton
-                  onClick={handleContactOneClick}
-                  className="px-12 py-3 md:px-20"
-                >
-                  Contact
-                </ShinyButton>
+    <div id="home" className="relative flex flex-col gap-6 sm:aspect-square">
+      <div className="flex gap-6">
+        <BlurFade className="w-full rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:aspect-square sm:w-1/2 sm:rounded-4xl sm:py-0">
+          <MagicCard>
+            <div className="flex h-full">
+              <div className="m-auto sm:pb-10">
+                <div className="text-6xl font-semibold tracking-tight text-white md:text-7xl">
+                  Hi 👋
+                  <br />
+                  I&apos;m Marty
+                </div>
+                <h1 className="mx-auto flex whitespace-nowrap pt-4 text-3xl font-semibold tracking-tight text-muted-foreground sm:pt-6 md:text-4xl">
+                  Frontend Developer
+                </h1>
               </div>
             </div>
-          </div>
-        </MagicCard>
-      </BlurFade>
+          </MagicCard>
+        </BlurFade>
+        <BlurFade className="hidden aspect-square w-1/2 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl">
+          <MagicCard>
+            <div className="flex h-full">
+              <div className="m-auto space-y-10">
+                <h2 className="text-balance text-2xl font-semibold text-muted-foreground sm:-mt-4 md:-mt-10 md:text-3xl lg:text-4xl">
+                  Have a project in <br />
+                  mind, or looking <br />
+                  to hire a Frontend <br />
+                  Developer?
+                </h2>
+                <div className="flex justify-center">
+                  <ShinyButton
+                    onClick={handleContactOneClick}
+                    className="px-12 py-3 md:px-20"
+                  >
+                    Contact
+                  </ShinyButton>
+                </div>
+              </div>
+            </div>
+          </MagicCard>
+        </BlurFade>
+      </div>
       <Avatar />
       <BlurFade
         delay={0.3}
-        className="col-span-12 w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:rounded-4xl"
+        className="w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:rounded-4xl"
       >
         <MagicCard>
-          <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:pt-10">
+          <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-10">
             <div className="w-fit text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               <p className="">
                 A proud graduate of Bethel School of{" "}
