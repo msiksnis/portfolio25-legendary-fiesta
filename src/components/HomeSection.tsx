@@ -21,9 +21,12 @@ export default function HomeSection() {
   };
 
   return (
-    <div id="home" className="relative flex flex-col gap-6 sm:aspect-square">
+    <div
+      id="home"
+      className="relative flex flex-col gap-6 pt-1.5 sm:aspect-square"
+    >
       <div className="flex gap-6">
-        <BlurFade className="w-full rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:aspect-square sm:w-1/2 sm:rounded-4xl sm:py-0">
+        <BlurFade className="w-full flex-1 rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:aspect-square sm:rounded-4xl sm:py-0">
           <MagicCard>
             <div className="flex h-full">
               <div className="m-auto sm:pb-10">
@@ -39,7 +42,7 @@ export default function HomeSection() {
             </div>
           </MagicCard>
         </BlurFade>
-        <BlurFade className="hidden aspect-square w-1/2 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl">
+        <BlurFade className="hidden aspect-square flex-1 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl">
           <MagicCard>
             <div className="flex h-full">
               <div className="m-auto space-y-10">
@@ -65,10 +68,10 @@ export default function HomeSection() {
       <Avatar />
       <BlurFade
         delay={0.3}
-        className="w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:rounded-4xl"
+        className="w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:max-h-[435px] sm:rounded-4xl"
       >
         <MagicCard>
-          <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-10">
+          <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-14 md:pt-10">
             <div className="w-fit text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               <p className="">
                 A proud graduate of Bethel School of{" "}
