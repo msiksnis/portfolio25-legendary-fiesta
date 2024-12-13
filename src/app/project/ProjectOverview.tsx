@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Plus } from "lucide-react";
+import { GraduationCap, Plus } from "lucide-react";
 import { motion } from "framer-motion";
 
 import ProjectLinkButton from "@/components/ProjectLinkButton";
@@ -16,6 +16,7 @@ interface FeatureProps {
 
 interface ProjectOverviewProps {
   title: string;
+  note?: string;
   description: string;
   techTags?: string[];
   demoLink: string;
@@ -26,6 +27,7 @@ interface ProjectOverviewProps {
 
 export default function ProjectOverview({
   title,
+  note,
   description,
   features,
   techTags,
@@ -46,10 +48,14 @@ export default function ProjectOverview({
   return (
     <div className="mx-auto max-w-7xl space-y-6 pb-20 pt-10">
       <div className="mx-auto max-w-6xl space-y-6">
-        <BlurFade>
+        <BlurFade className="max-w-2xl">
           <h1 className="max-w-4xl text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
             {title}
           </h1>
+          <p className="note flex items-start gap-2 text-balance pt-2 text-sm italic text-gray-400">
+            <GraduationCap size={20} />
+            {note}
+          </p>
         </BlurFade>
         <BlurFade delay={0.1}>
           <p className="max-w-5xl text-xl font-light leading-snug text-secondary sm:text-3xl">

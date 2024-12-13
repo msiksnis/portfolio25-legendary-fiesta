@@ -7,6 +7,7 @@ interface Feature {
 
 interface ProjectData {
   title: string;
+  note: string;
   description: string;
   techTags: string[];
   demoLink: string;
@@ -17,6 +18,7 @@ interface ProjectData {
 
 const holidazeProjectData: ProjectData = {
   title: "Venue Booking App",
+  note: "Built as part of my school exam to demonstrate modern web development skills.",
   description:
     "Holidaze is a full-featured accommodation booking site built with modern web technologies, offering a straightforward user experience for both travelers and venue managers. Deployed on Netlify, Holidaze is a prime example of a performant, user-friendly, responsive web app that combines robust functionality, clean design, and an intuitive interface.",
   techTags: [
@@ -39,6 +41,11 @@ const holidazeProjectData: ProjectData = {
     "/mockups/holidaze_mobile_single_venue_section.webp",
   ],
   features: [
+    {
+      feature: "User Authentication",
+      description:
+        "Register using any email ending in @stud.noroff.no (no actual email validation required), then log in and manage your user profile.",
+    },
     {
       feature: "List of Venues",
       description:
