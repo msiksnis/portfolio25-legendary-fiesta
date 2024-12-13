@@ -81,7 +81,7 @@ export default function Navbar() {
         const top =
           section.getBoundingClientRect().top +
           window.scrollY -
-          (isMobile ? 80 : 20);
+          (isMobile ? 86 : 20);
         setIsScrolling(true);
         customScrollTo(top, () => {
           setIsScrolling(false);
@@ -101,7 +101,7 @@ export default function Navbar() {
         const top =
           section.getBoundingClientRect().top +
           window.scrollY -
-          (isMobile ? 80 : 20);
+          (isMobile ? 86 : 20);
         setIsScrolling(true);
         customScrollTo(top, () => {
           setIsScrolling(false);
@@ -187,7 +187,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-4 z-50 mx-auto mb-4 mt-4 flex w-full items-center sm:static sm:mb-6 sm:mt-8 sm:w-fit">
+    <div className="sticky top-4 z-50 mx-auto mb-6 mt-4 flex w-full items-center sm:static sm:mt-8 sm:w-fit">
       <MagicCard className="rounded-full border bg-card px-2 py-1.5">
         <div
           className="relative flex flex-col"
