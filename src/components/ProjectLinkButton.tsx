@@ -22,7 +22,7 @@ export default function ProjectLinkButton({
       rel="noopener noreferrer"
       href={href}
       className={cn(
-        "group/preview flex items-center whitespace-nowrap text-muted-foreground transition-all duration-200 hover:text-white",
+        "group/preview flex items-center whitespace-nowrap text-muted-foreground transition-all duration-300 hover:text-white",
         className,
       )}
     >
@@ -30,7 +30,7 @@ export default function ProjectLinkButton({
       <ArrowRightCircle
         strokeWidth={1.5}
         className={cn(
-          "ml-2 -rotate-45 transition-all duration-300 group-hover/preview:translate-x-2 group-hover/preview:rotate-0",
+          "ml-2 -rotate-45 text-muted-foreground transition-all duration-300 group-hover/preview:translate-x-2 group-hover/preview:rotate-0 group-hover/preview:text-white",
         )}
         style={{ width: `${arrowSize}px`, height: `${arrowSize}px` }}
       />
