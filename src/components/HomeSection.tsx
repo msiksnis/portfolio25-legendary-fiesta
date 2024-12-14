@@ -42,7 +42,10 @@ export default function HomeSection() {
             </div>
           </MagicCard>
         </BlurFade>
-        <BlurFade className="hidden aspect-square flex-1 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl">
+        <BlurFade
+          delay={0.2}
+          className="hidden aspect-square flex-1 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl"
+        >
           <MagicCard>
             <div className="flex h-full">
               <div className="m-auto space-y-10">
@@ -67,7 +70,7 @@ export default function HomeSection() {
       </div>
       <Avatar />
       <BlurFade
-        delay={0.3}
+        delay={0.4}
         className="w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:max-h-[435px] sm:rounded-4xl"
       >
         <MagicCard>
