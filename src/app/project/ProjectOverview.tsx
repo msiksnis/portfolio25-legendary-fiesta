@@ -136,31 +136,33 @@ export default function ProjectOverview({
                   aria-expanded={isExpanded}
                   aria-controls={`feature-panel-${index}`}
                   role="button"
-                  className="flex w-full cursor-pointer items-center justify-between"
+                  className="cursor-pointer"
                 >
-                  <p className="text-lg text-white">{feature}</p>
-                  <Plus
-                    size={20}
-                    className={cn("transition-all duration-200", {
-                      "rotate-45": isExpanded,
-                    })}
-                  />
+                  <div className="flex w-full items-center justify-between">
+                    <p className="text-lg text-white">{feature}</p>
+                    <Plus
+                      size={20}
+                      className={cn("transition-all duration-200", {
+                        "rotate-45": isExpanded,
+                      })}
+                    />
+                  </div>
+                  <motion.div
+                    id={`feature-panel-${index}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{
+                      height: isExpanded ? "auto" : 0,
+                      opacity: isExpanded ? 1 : 0,
+                    }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="max-w-[95%] py-2 text-start text-secondary">
+                      {description}
+                    </p>
+                  </motion.div>
                 </button>
-                <motion.div
-                  id={`feature-panel-${index}`}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{
-                    height: isExpanded ? "auto" : 0,
-                    opacity: isExpanded ? 1 : 0,
-                  }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden"
-                >
-                  <p className="max-w-[95%] py-2 text-secondary">
-                    {description}
-                  </p>
-                </motion.div>
               </BlurFade>
             );
           })}
