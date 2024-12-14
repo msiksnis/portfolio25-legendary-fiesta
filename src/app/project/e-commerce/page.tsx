@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectOverview from "../ProjectOverview";
+import ProjectOverview from "../components/ProjectOverview";
 
 interface Feature {
   feature: string;
@@ -40,14 +40,14 @@ const mrCapsStoreProjectData: ProjectData = {
   demoLink: "https://caps-store.netlify.app",
   repoLink: "https://github.com/msiksnis/caps-store-musical-winner",
   images: [
-    "/mockups/e-commerce_landing_section_mobile.webp",
-    "/mockups/e-commerce_landing_section.webp",
-    "/mockups/e-commerce_single_product.webp",
-    "/mockups/e-commerce_single_product_mobile.webp",
-    "/mockups/e-commerce_cart_page_mobile.webp",
-    "/mockups/e-commerce_cart_page.webp",
-    "/mockups/e-commerce_modal.webp",
-    "/mockups/e-commerce_modal_mobile.webp",
+    "/mockups/e-commerce/landing_section_mobile.png",
+    "/mockups/e-commerce/landing_section.png",
+    "/mockups/e-commerce/single_product_page.png",
+    "/mockups/e-commerce/single_product_page_mobile.png",
+    "/mockups/e-commerce/cart_page_mobile.png",
+    "/mockups/e-commerce/cart_page.png",
+    "/mockups/e-commerce/modal_with_form.png",
+    "/mockups/e-commerce/modal_with_form_mobile.png",
   ],
   features: [
     {

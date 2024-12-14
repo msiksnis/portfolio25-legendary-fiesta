@@ -1,4 +1,4 @@
-import ProjectOverview from "../ProjectOverview";
+import ProjectOverview from "../components/ProjectOverview";
 
 interface Feature {
   feature: string;
@@ -31,8 +31,8 @@ const auctionHouseProjectData: ProjectData = {
   demoLink: "https://msiksnis-sp2-auction.vercel.app/",
   repoLink: "https://github.com/msiksnis/msiksnis-sp2-auction",
   images: [
-    "/mockups/auction_house_landing.webp",
-    "/mockups/auction_house_landing_mobile.webp",
+    "/mockups/auction-house/landing_section.webp",
+    "/mockups/auction-house/landing_section_mobile.webp",
   ],
   features: [
     {

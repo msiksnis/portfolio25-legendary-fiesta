@@ -1,4 +1,4 @@
-import ProjectOverview from "../ProjectOverview";
+import ProjectOverview from "../components/ProjectOverview";
 
 interface Feature {
   feature: string;
@@ -35,10 +35,10 @@ const holidazeProjectData: ProjectData = {
   demoLink: "https://venue-booking-msiksnis.netlify.app/",
   repoLink: "https://github.com/msiksnis/pe2-solid-parakeet",
   images: [
-    "/mockups/holidaze_landing_with_bg.webp",
-    "/mockups/holidaze_single_venue_with_bg.webp",
-    "/mockups/holidaze_mobile_landing_section.webp",
-    "/mockups/holidaze_mobile_single_venue_section.webp",
+    "/mockups/holidaze/landing_section.webp",
+    "/mockups/holidaze/single_venue_page.webp",
+    "/mockups/holidaze/landing_section_mobile.webp",
+    "/mockups/holidaze/single_venue_page_mobile.webp",
   ],
   features: [
     {
