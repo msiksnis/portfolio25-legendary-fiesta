@@ -19,5 +19,9 @@
     "titleBar.inactiveBackground": "#f9bf3899",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#F9BF38"
+  "peacock.color": "#F9BF38",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "postcss/**/*",
+    "@radix-ui/*"
+  ]
 }
