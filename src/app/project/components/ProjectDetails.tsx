@@ -2,15 +2,7 @@ import { GraduationCap } from "lucide-react";
 
 import ProjectLinkButton from "@/components/ProjectLinkButton";
 import BlurFade from "@/components/ui/blur-fade";
-
-interface ProjectDetailsProps {
-  title: string;
-  note?: string;
-  description: string;
-  techTags?: string[];
-  demoLink: string;
-  repoLink: string;
-}
+import { ProjectData, TechTag } from "@/app/project/utils/projectTypes";
 
 export default function ProjectDetails({
   title,
@@ -19,7 +11,7 @@ export default function ProjectDetails({
   techTags,
   demoLink,
   repoLink,
-}: ProjectDetailsProps) {
+}: ProjectData) {
   return (
     <div className="mx-auto max-w-6xl space-y-6">
       <BlurFade className="max-w-2xl">
@@ -39,13 +31,13 @@ export default function ProjectDetails({
       <div className="flex pb-2 pt-4">
         <BlurFade delay={0.2}>
           <div className="flex flex-wrap justify-start gap-4">
-            {techTags?.map((tag, index) => (
-              <BlurFade delay={index * 0.1} key={index}>
+            {techTags?.map((tag: TechTag) => (
+              <BlurFade delay={tag.id * 0.1} key={tag.id}>
                 <span
-                  key={tag}
-                  className="w-fit rounded-2xl border border-amber-200 px-3 py-0.5 text-amber-200 sm:rounded-4xl"
+                  key={tag.id}
+                  className="w-fit rounded-2xl border border-amber-200 px-3 py-1 text-amber-200 sm:rounded-4xl"
                 >
-                  {tag}
+                  {tag.name}
                 </span>
               </BlurFade>
             ))}

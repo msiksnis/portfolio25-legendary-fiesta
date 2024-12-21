@@ -1,7 +1,7 @@
 import ContactSection from "@/components/contact/ContactSection";
-import FavoriteTools from "@/components/FavoriteTools";
 import HomeSection from "@/components/HomeSection";
 import PortfolioSection from "@/components/portfolio/PortfolioSection";
+import FavoriteTools from "@/components/FavoriteTools";
 
 export default function HomePage() {
   return (

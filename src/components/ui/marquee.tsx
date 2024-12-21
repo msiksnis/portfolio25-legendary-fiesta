@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
@@ -82,7 +82,7 @@ export default function Marquee({
       {...props}
       ref={containerRef}
       className={cn(
-        "group flex p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex pt-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
