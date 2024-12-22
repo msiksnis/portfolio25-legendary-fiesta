@@ -58,11 +58,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border selection:bg-white selection:text-card;
-  }
-  .main-layout {
-    @apply bg-[#000100] px-4 text-foreground text-white;
-  }
+.main-layout {
+  @apply border-border px-4;
 }

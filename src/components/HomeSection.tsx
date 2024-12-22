@@ -26,7 +26,7 @@ export default function HomeSection() {
       className="relative flex flex-col gap-6 pt-1.5 sm:aspect-square"
     >
       <div className="flex gap-6">
-        <BlurFade className="w-full flex-1 rounded-2xl border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:aspect-square sm:rounded-4xl sm:py-0">
+        <BlurFade className="w-full flex-1 rounded-2xl border border-border bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D] py-6 sm:aspect-square sm:rounded-4xl sm:py-0">
           <MagicCard>
             <div className="flex h-full">
               <div className="m-auto sm:pb-10">
@@ -44,7 +44,7 @@ export default function HomeSection() {
         </BlurFade>
         <BlurFade
           delay={0.2}
-          className="hidden aspect-square flex-1 rounded-2xl border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl"
+          className="hidden aspect-square flex-1 rounded-2xl border border-border bg-gradient-to-bl from-[#1f1f22] to-[#0A0A0D] sm:block sm:rounded-4xl"
         >
           <MagicCard>
             <div className="flex h-full">
@@ -71,7 +71,7 @@ export default function HomeSection() {
       <Avatar />
       <BlurFade
         delay={0.4}
-        className="w-full rounded-2xl border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:max-h-[435px] sm:rounded-4xl"
+        className="w-full rounded-2xl border border-border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:max-h-[435px] sm:rounded-4xl"
       >
         <MagicCard>
           <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-14 md:pt-10">

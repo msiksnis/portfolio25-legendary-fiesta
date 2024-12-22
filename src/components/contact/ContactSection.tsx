@@ -19,7 +19,7 @@ export default function ContactSection() {
     <BlurFade inView>
       <div
         id="contact"
-        className="w-full rounded-2xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
+        className="w-full rounded-2xl border border-border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
       >
         <MagicCard className="h-full w-full items-center justify-center rounded-2xl px-4 sm:rounded-4xl md:px-16">
           <div className="mx-auto flex flex-col justify-center space-y-10 py-6 sm:py-12">

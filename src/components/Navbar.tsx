@@ -190,20 +190,20 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-4 z-50 mx-auto mb-6 mt-4 flex w-full items-center backdrop-blur-[100px] sm:static sm:mt-8 sm:w-fit">
-      <MagicCard className="rounded-full border bg-card px-2 py-1.5">
+      <MagicCard className="rounded-full border border-border bg-card px-2 py-1.5">
         <div
           className="relative flex flex-col"
           role="tablist"
           aria-label="Navigation Tabs"
         >
-          <ul className="flex w-full justify-between gap-x-2 sm:justify-center md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
+          <ul className="flex w-full justify-between sm:justify-center sm:gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
             {TABS.map((tab) => (
               <li key={tab.name}>
                 <button
                   ref={activeTab === tab.name ? activeTabElementRef : null}
                   data-tab={tab.name}
                   onClick={() => handleTabClick(tab.name, tab.target)}
-                  className={`flex h-9 items-center whitespace-nowrap rounded-full px-6 text-base font-medium text-muted-foreground ${
+                  className={`flex h-9 items-center whitespace-nowrap rounded-full px-2 text-base font-medium text-muted-foreground sm:px-6 ${
                     activeTab === tab.name ? "text-primary" : ""
                   }`}
                 >
@@ -220,13 +220,13 @@ export default function Navbar() {
             ref={containerRef}
             style={{ clipPath: "inset(0 75% 0 0 round 17px)" }}
           >
-            <ul className="flex w-full justify-between gap-x-2 bg-gradient-to-br from-amber-300 to-amber-500 text-primary shadow sm:justify-center md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
+            <ul className="flex w-full justify-between bg-gradient-to-br from-amber-300 to-amber-500 text-primary shadow sm:justify-center sm:gap-x-2 md:gap-x-4 lg:gap-x-6 xl:gap-x-12">
               {TABS.map((tab) => (
                 <li key={tab.name}>
                   <button
                     data-tab={tab.name}
                     onClick={handleActiveTabClick}
-                    className="flex h-9 items-center whitespace-nowrap rounded-full px-6 font-medium opacity-100"
+                    className="flex h-9 items-center whitespace-nowrap rounded-full px-2 font-medium opacity-100 sm:px-6"
                     tabIndex={-1}
                   >
                     {tab.name}

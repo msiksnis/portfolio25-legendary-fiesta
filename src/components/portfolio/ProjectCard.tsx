@@ -31,7 +31,7 @@ export default function ProjectCard({
       id="portfolio"
       type="button"
       onClick={() => router.push(projectLink)}
-      className="group/card relative flex h-full min-h-56 w-full flex-col rounded-2xl border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
+      className="group/card relative flex h-full min-h-56 w-full flex-col rounded-2xl border border-border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
     >
       <MagicCard
         className={cn(
