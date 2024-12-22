@@ -1,11 +1,27 @@
+import Navbar from "@/components/Navbar";
 import "./styles.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/Footer";
 
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <section>{children}</section>;
+  return (
+    <section>
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        <div className="flex-1">
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </div>
+        <Footer />
+      </div>
+    </section>
+  );
 }
 
 // import React from "react";

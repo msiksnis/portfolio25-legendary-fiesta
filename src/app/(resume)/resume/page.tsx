@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen w-full p-10 print:py-0">
+    <div className="w-full p-10 print:py-0">
       <nav className="flex flex-col items-start justify-between space-y-4 sm:flex-row sm:items-center sm:space-y-0 print:hidden">
         <Link href={"/"} className="flex items-center">
           <ArrowLeft className="mr-1.5 w-5" />
