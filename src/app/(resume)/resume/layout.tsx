@@ -1,11 +1,9 @@
-import React from "react";
-import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import React from "react";
 import { Toaster } from "react-hot-toast";
 
 import "./styles.css";
+import { Metadata } from "next";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -13,8 +11,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Resume • Developer Marty",
-  description: "Resume for Developer Marty",
+  title: "Frontend Developer Marty",
+  description: "Resume of Developer Marty",
 };
 
 export default function ResumeLayout({
@@ -23,17 +21,9 @@ export default function ResumeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={jetBrainsMono.className}>
-        <Toaster />
-        <div className="flex min-h-screen flex-col">
-          <div className="flex-1">
-            {children}
-            <SpeedInsights />
-            <Analytics />
-          </div>
-        </div>
-      </body>
-    </html>
+    <section className={`${jetBrainsMono.className} resume-layout`}>
+      <Toaster />
+      {children}
+    </section>
   );
 }

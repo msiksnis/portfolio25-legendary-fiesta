@@ -48,7 +48,20 @@ export default function ResumePage() {
               <div className="">&nbsp;+47 941 28 174</div>
             </div>
           </div>
-          <div className="flex flex-col text-lg md:flex-row print:text-[13px] print:leading-5">
+          <div className="flex flex-col text-lg sm:flex-row print:text-[13px] print:leading-5">
+            <div className="flex">
+              <div className="font-semibold">Portfolio:</div>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://devmarty.com"
+                className="text-blue-600"
+              >
+                &nbsp;devmarty.com
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col text-lg md:flex-row print:text-[13px] print:leading-5 print:sm:flex-row">
             <div className="flex">
               <div className="font-semibold">GitHub:</div>
               <a
@@ -60,7 +73,7 @@ export default function ResumePage() {
                 &nbsp;github.com/msiksnis
               </a>
             </div>
-            <div className="hidden md:block">&nbsp;|&nbsp;</div>
+            <div className="hidden md:block print:sm:block">&nbsp;|&nbsp;</div>
             <div className="flex">
               <div className="font-semibold">LinkedIn:</div>
               <a

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  .resume-layout {
     @apply bg-white text-gray-900;
   }
 }

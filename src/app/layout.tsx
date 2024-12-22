@@ -4,6 +4,8 @@ import React from "react";
 import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} root-layout`}>
         <Toaster />
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
