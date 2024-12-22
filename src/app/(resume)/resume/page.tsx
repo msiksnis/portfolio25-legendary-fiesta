@@ -18,7 +18,7 @@ export default function ResumePage() {
           <Button
             variant={"outline"}
             size={"sm"}
-            className="rounded bg-white transition-all hover:bg-gray-100"
+            className="hidden rounded bg-white transition-all hover:bg-gray-100"
           >
             Download Resume
           </Button>
