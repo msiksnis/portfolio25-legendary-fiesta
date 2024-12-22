@@ -58,15 +58,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border selection:bg-white selection:text-card;
-  }
-  body {
-    @apply bg-[#000100] px-4 text-foreground text-white;
-  }
-}
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
