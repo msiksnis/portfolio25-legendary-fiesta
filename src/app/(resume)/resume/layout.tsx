@@ -1,40 +1,37 @@
+import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "react-hot-toast";
 
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import "./styles.css";
 
-const inter = Inter({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Developer Marty",
-  description: "Personal portfolio site of developer Marty",
+  title: "My Resume • Developer Marty",
+  description: "Resume for Developer Marty",
 };
 
-export default function RootLayout({
+export default function ResumeLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={jetBrainsMono.className}>
         <Toaster />
         <div className="flex min-h-screen flex-col">
-          <Navbar />
           <div className="flex-1">
             {children}
             <SpeedInsights />
             <Analytics />
           </div>
-          <Footer />
         </div>
       </body>
     </html>

@@ -1,8 +1,8 @@
 import React from "react";
 import { FeatureItem } from "./FeatureItem";
 import BlurFade from "@/components/ui/blur-fade";
-import { ProjectData } from "@/app/project/utils/projectTypes";
-import { useProjectFeatures } from "@/app/project/utils/useProjectFeatures";
+import { ProjectData } from "@/app/(main)/project/utils/projectTypes";
+import { useProjectFeatures } from "@/app/(main)/project/utils/useProjectFeatures";
 
 export default function ProjectFeatures({ features }: Partial<ProjectData>) {
   const { items, toggleExpanded } = useProjectFeatures(features);

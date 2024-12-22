@@ -2,7 +2,7 @@ import { GraduationCap } from "lucide-react";
 
 import ProjectLinkButton from "@/components/ProjectLinkButton";
 import BlurFade from "@/components/ui/blur-fade";
-import { ProjectData, TechTag } from "@/app/project/utils/projectTypes";
+import { ProjectData, TechTag } from "@/app/(main)/project/utils/projectTypes";
 
 export default function ProjectDetails({
   title,

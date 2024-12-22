@@ -6,14 +6,11 @@ import Link from "next/link";
 
 export default function Custom404() {
   return (
-    <div className="relative mx-auto mt-40 max-w-4xl overflow-hidden rounded-4xl sm:aspect-video">
-      <div className="relative grid h-full place-content-center space-y-6 bg-neutral-950 p-8">
+    <div className="relative mx-auto my-20 max-w-4xl overflow-hidden rounded-4xl sm:aspect-video">
+      <div className="relative grid h-full place-content-center space-y-14 bg-neutral-950 p-8">
         <h1 className="text-center text-6xl font-black text-neutral-50">
           404 - Page Not Found
         </h1>
-        <p className="text-center text-4xl text-neutral-400">
-          You should not be here.
-        </p>
         <div className="flex items-center justify-center gap-3">
           <Button
             variant={"linkHover2"}

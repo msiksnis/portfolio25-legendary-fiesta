@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { MagicCard } from "./ui/magic-card";
 import { customScrollTo } from "@/lib/utils";
 import { useScreenSizes } from "@/hooks/useResponsive";
@@ -10,16 +10,9 @@ const TABS = [
   { name: "Home", target: "home" },
   { name: "Portfolio", target: "portfolio" },
   { name: "Contact", target: "contact" },
+  { name: "Resume", target: "resume" },
 ];
 
-/**
- * The Navbar component renders a tab-based navigation bar with a highlighting
- * effect for the currently active tab. It supports:
- * - Navigating to the homepage route (`/`)
- * - Scrolling smoothly to in-page sections (e.g. "home", "portfolio", "contact")
- * - Updating the active tab based on visible sections (via Intersection Observer)
- * - Handling transitions to and from project pages or contact pages
- */
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState(TABS[0].name);
   const [scrollTarget, setScrollTarget] = useState<string | null>(null);
@@ -39,7 +32,6 @@ export default function Navbar() {
 
   /**
    * Synchronize the active tab based on the current route.
-   * If the pathname indicates a project or contact page, update the tab accordingly.
    */
   useEffect(() => {
     if (!pathname) return;
@@ -49,21 +41,27 @@ export default function Navbar() {
       setActiveTab("Portfolio");
     } else if (pathname.startsWith("/contact")) {
       setActiveTab("Contact");
+    } else if (pathname.startsWith("/resume")) {
+      setActiveTab("Resume");
     }
   }, [pathname]);
 
   /**
    * Handles user clicks on a tab.
-   * - Updates activeTab immediately.
-   * - If "Contact" or "Portfolio" is clicked from a non-home route, navigates to "/" first and sets scrollTarget.
-   * - Otherwise, if on home, it scrolls directly to the target section.
-   *
-   * @param tabName - The name of the tab clicked (e.g. "Home", "Portfolio", "Contact")
-   * @param target - The target section ID (e.g. "home", "portfolio", "contact")
+   * - If “Resume” is clicked, navigate directly to "/resume".
+   * - Otherwise, if not on home, and tabName is “Contact” or “Portfolio”, navigate home first.
+   * - If on home, scroll to the target section.
    */
   const handleTabClick = (tabName: string, target: string) => {
     setActiveTab(tabName);
 
+    // If user clicks "Resume," just navigate to /resume
+    if (tabName === "Resume") {
+      router.push("/resume");
+      return;
+    }
+
+    // Handle all other tabs (Home, Portfolio, Contact)
     if (pathname !== "/") {
       // If not on home, but user clicked Portfolio or Contact, navigate home first
       if (tabName === "Contact" || tabName === "Portfolio") {
@@ -71,12 +69,13 @@ export default function Navbar() {
         router.push("/");
         return;
       }
+      // If user clicks Home from a different route
       if (target === "home") {
         router.push("/");
         return;
       }
     } else {
-      // Already on home, scroll directly
+      // Already on home, just scroll
       const section = document.getElementById(target);
       if (section) {
         const top =
@@ -110,12 +109,14 @@ export default function Navbar() {
         setScrollTarget(null); // Clear target after scrolling
       }
     }
-  }, [pathname, scrollTarget]);
+  }, [isMobile, pathname, scrollTarget]);
 
   /**
    * Sets up an Intersection Observer to determine which section is most visible
    * as the user scrolls. If not currently scrolling due to a click, update the
    * activeTab based on the visible section.
+   *
+   * Note: If “Resume” doesn’t exist as a section on the home page, it simply won’t be observed.
    */
   useEffect(() => {
     const sections = TABS.map((tab) =>
@@ -174,8 +175,8 @@ export default function Navbar() {
   }, [activeTab]);
 
   /**
-   * Handles clicks on the active tab highlight element.
-   * - If the active tab is "Home", do nothing. Else call handleTabClick with the active tab's target.
+   * Handles clicks on the highlight element behind the active tab.
+   * If the active tab is “Home”, do nothing. Otherwise, emulate a direct click.
    */
   const handleActiveTabClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const tabName = event.currentTarget.getAttribute("data-tab");

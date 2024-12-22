@@ -1,4 +1,4 @@
-import { ProjectData } from "@/app/project/utils/projectTypes";
+import { ProjectData } from "@/app/(main)/project/utils/projectTypes";
 
 export const auctionHouseProjectData: ProjectData = {
   title: "Auction House",

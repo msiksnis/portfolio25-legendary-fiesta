@@ -3,7 +3,7 @@
 import Images from "./Images";
 import ProjectDetails from "./ProjectDetails";
 import ProjectFeatures from "./ProjectFeatures";
-import { ProjectData } from "@/app/project/utils/projectTypes";
+import { ProjectData } from "@/app/(main)/project/utils/projectTypes";
 
 export default function ProjectOverview({
   title,
