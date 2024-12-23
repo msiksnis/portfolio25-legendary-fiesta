@@ -60,7 +60,7 @@ export default function ResumePage() {
             variant={"outline"}
             size={"sm"}
             disabled={isLoading}
-            className="rounded bg-white transition-all hover:bg-gray-100 disabled:hover:bg-white"
+            className="hidden rounded bg-white transition-all hover:bg-gray-100 disabled:hover:bg-white sm:block"
           >
             {isLoading ? (
               <span className="flex items-center">
