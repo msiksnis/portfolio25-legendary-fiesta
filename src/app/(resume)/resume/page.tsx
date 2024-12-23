@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowLeft, Dot, LoaderCircle } from "lucide-react";
-import Link from "next/link";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { ArrowLeft, LoaderCircle } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
