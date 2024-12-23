@@ -18,15 +18,28 @@ export default function ResumePage() {
 
     try {
       setIsLoading(true);
-
       const canvas = await html2canvas(element, { scale: 2 });
       const imgData = canvas.toDataURL("image/png");
 
-      const pdf = new jsPDF("portrait", "mm", "a4");
+      const pdf = new jsPDF("p", "em", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      const originalCanvasWidth = canvas.width;
+      const originalCanvasHeight = canvas.height;
 
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      const scaleFactor = 1.1;
+      const scaledPdfWidth = pdfWidth * scaleFactor;
+      const scaledPdfHeight =
+        (originalCanvasHeight * scaledPdfWidth) / originalCanvasWidth;
+
+      const xOffset = (pdfWidth - pdfWidth / scaleFactor) / 2;
+      pdf.addImage(
+        imgData,
+        "PNG",
+        -xOffset,
+        0,
+        scaledPdfWidth,
+        scaledPdfHeight,
+      );
       pdf.save("marty_siksnis_resume.pdf");
     } catch (error) {
       console.error(error);
@@ -69,8 +82,8 @@ export default function ResumePage() {
         </div>
       </nav>
 
-      <section id="resume" className="sm:py-10 print:py-0">
-        <div className="mx-auto my-10 flex h-full max-w-3xl flex-col space-y-8 print:space-y-4 print:py-0">
+      <section id="resume" className="sm:py-10 print:py-0 print:pl-4">
+        <div className="mx-auto my-10 flex h-full max-w-3xl flex-col space-y-8 print:space-y-4">
           <h1 className="text-2xl font-semibold uppercase sm:flex sm:text-3xl print:text-base">
             <div className="">Marty Siksnis</div>
             <div className="hidden sm:block">&nbsp;|&nbsp;</div>
@@ -144,7 +157,7 @@ export default function ResumePage() {
 
           <div className="space-y-4 print:space-y-0">
             <Heading>Education</Heading>
-            <div className="space-y-2">
+            <div className="space-y-1">
               <SubHeading>
                 <h2 className="font-bold">Frontend Developer (JavaScript)</h2>
                 <p className="font-light italic">
@@ -162,7 +175,7 @@ export default function ResumePage() {
 
           <div className="space-y-4 print:space-y-0">
             <Heading>Favorite Technologies</Heading>
-            <div className="space-y-2 print:space-y-0">
+            <div className="space-y-1 print:space-y-0">
               <SubHeading className="flex">
                 <h2 className="font-bold">Languages & Frameworks:</h2>
                 <p className="font-light">
@@ -191,40 +204,60 @@ export default function ResumePage() {
 
             <div className="space-y-4 print:space-y-0">
               <Heading>Soft Skills</Heading>
-              <div className="space-y-2 print:space-y-0">
-                <SubHeading>Strong communication and teamwork</SubHeading>
-                <SubHeading>Keen problem-solving ability</SubHeading>
+              <div className="space-y-1 print:space-y-0">
                 <SubHeading>
-                  Detail-oriented and focused on pixel-perfect designs
+                  <h2>Strong communication and teamwork</h2>
+                  <p className=""></p>
                 </SubHeading>
                 <SubHeading>
-                  Adaptable and eager to learn new technologies quickly
+                  <h2>Keen problem-solving ability</h2>
+                  <p className=""></p>
+                </SubHeading>
+                <SubHeading>
+                  <h2>Detail-oriented and focused on pixel-perfect designs</h2>
+                  <p className=""></p>
+                </SubHeading>
+                <SubHeading>
+                  <h2>Adaptable and eager to learn new technologies quickly</h2>
+                  <p className=""></p>
                 </SubHeading>
               </div>
             </div>
 
             <div className="space-y-4 print:space-y-0">
               <Heading>Projects</Heading>
-              <div className="space-y-2 print:space-y-0">
+              <div className="space-y-1 print:space-y-0">
                 <h3>Dog Daycare Dashboard:</h3>
                 <SubHeading>
-                  Developing a dashboard to manage bookings and clients using
-                  Next.js, TypeScript, TanStack Query, Zustand, Supabase, and
-                  Tailwind CSS.
+                  <h2>
+                    Developing a dashboard to manage bookings and clients using
+                    Next.js, TypeScript, TanStack Query, Zustand, Supabase, and
+                    Tailwind CSS.
+                  </h2>
+                  <p className=""></p>
                 </SubHeading>
                 <SubHeading>
-                  Includes real-time data updates and authentication features.
+                  <h2>
+                    Includes real-time data updates and authentication features.
+                  </h2>
+                  <p className=""></p>
                 </SubHeading>
               </div>
-              <div className="space-y-2 print:space-y-0">
+              <div className="space-y-1 print:space-y-0">
                 <h3>Venue Booking App:</h3>
                 <SubHeading>
-                  Built a responsive web app for booking venues using React,
-                  TypeScript, and REST API.
+                  <h2>
+                    Built a responsive web app for booking venues using React,
+                    TypeScript, and REST API.
+                  </h2>
+                  <p className=""></p>
                 </SubHeading>
                 <SubHeading>
-                  Designed an intuitive UI with Tailwind CSS, focusing on user
-                  experience.
+                  <h2>
+                    Designed an intuitive UI with Tailwind CSS, focusing on user
+                    experience.
+                  </h2>
+                  <p className=""></p>
                 </SubHeading>
               </div>
             </div>
@@ -252,8 +285,16 @@ function SubHeading({
 }) {
   return (
     <div className="grid grid-cols-12">
-      <div className="col-span-1 mx-auto">
-        <Dot className="-mt-1 size-9 print:-mt-2" />
+      <div className="col-span-1 mx-auto flex items-center justify-center print:items-start print:pt-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          width="12"
+          height="12"
+        >
+          <circle cx="8" cy="8" r="4" />
+        </svg>
       </div>
       <div
         className={cn(
