@@ -174,7 +174,7 @@ export default function ResumePage() {
           </div>
 
           <div className="space-y-4 print:space-y-0">
-            <Heading>Favorite Technologies</Heading>
+            <Heading>Favorite Tech Stack</Heading>
             <div className="space-y-1 print:space-y-0">
               <SubHeading className="flex">
                 <h2 className="font-bold">Languages & Frameworks:</h2>
@@ -228,7 +228,7 @@ export default function ResumePage() {
               <Heading>Projects</Heading>
               <div className="space-y-1 print:space-y-0">
                 <div className="flex">
-                  <h3>Dog Daycare Dashboard:</h3>
+                  <h3>Dog Daycare Center management dashboard:</h3>
                   <a
                     target="_blank"
                     rel="noreferrer"
