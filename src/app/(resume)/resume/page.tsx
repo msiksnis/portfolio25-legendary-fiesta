@@ -227,7 +227,17 @@ export default function ResumePage() {
             <div className="space-y-4 print:space-y-0">
               <Heading>Projects</Heading>
               <div className="space-y-1 print:space-y-0">
-                <h3>Dog Daycare Dashboard:</h3>
+                <div className="flex">
+                  <h3>Dog Daycare Dashboard:</h3>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href=""
+                    className="text-blue-600"
+                  >
+                    &nbsp;Live Demo App coming soon
+                  </a>
+                </div>
                 <SubHeading>
                   <h2>
                     Developing a dashboard to manage bookings and clients using
@@ -244,7 +254,17 @@ export default function ResumePage() {
                 </SubHeading>
               </div>
               <div className="space-y-1 print:space-y-0">
-                <h3>Venue Booking App:</h3>
+                <div className="flex">
+                  <h3>Venue Booking App:</h3>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://venue-booking-msiksnis.netlify.app/"
+                    className="text-blue-600"
+                  >
+                    &nbsp;https://venue-booking-msiksnis.netlify.app/
+                  </a>
+                </div>
                 <SubHeading>
                   <h2>
                     Built a responsive web app for booking venues using React,
