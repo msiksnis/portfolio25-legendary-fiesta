@@ -146,12 +146,12 @@ export default function ResumePage() {
           <div className="space-y-4 print:space-y-0">
             <Heading>Summary</Heading>
             <p className="print:text-[12px]">
-              I&apos;m a newly graduated Frontend Developer with a solid
-              foundation in JavaScript, TypeScript, React, and Next.js. After
-              working as a plumber, I decided to pursue my passion for
-              technology and building things but this time in the digital world.
-              I enjoy solving problems, working with others, and creating
-              designs that look great and work well.
+              I&apos;m a newly graduated Frontend Developer, but I bring over
+              four years of hands-on experience in JavaScript, TypeScript,
+              React, and Next.js. After working as a plumber, I decided to
+              pursue my passion for technology and building things, but this
+              time in the digital world. I enjoy solving problems, working with
+              others, and creating designs that look great and work well.
             </p>
           </div>
 
