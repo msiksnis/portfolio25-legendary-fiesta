@@ -7,7 +7,7 @@ export default function Avatar() {
         <div className="absolute -top-2 left-1/2 h-3 w-6 -translate-x-1/2 bg-primary"></div>
         <div className="absolute -left-2 top-1/2 h-6 w-3 -translate-y-1/2 bg-primary"></div>
         <div className="absolute -right-2 top-1/2 h-6 w-3 -translate-y-1/2 bg-primary"></div>
-        <Image src={"/avatar_3.png"} alt="avatar" width={190} height={190} />
+        <Image src={"/avatar_5.png"} alt="avatar" width={190} height={190} />
       </div>
     </div>
   );
