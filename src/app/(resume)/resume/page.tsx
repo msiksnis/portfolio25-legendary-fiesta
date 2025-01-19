@@ -2,7 +2,7 @@
 
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { ArrowLeft, LoaderCircle } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -232,10 +232,11 @@ export default function ResumePage() {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href=""
-                    className="text-blue-600"
+                    href="https://dog-daycare-demo-msiksnis.vercel.app/"
+                    className="group/1 flex text-blue-600"
                   >
-                    &nbsp;Live Demo App coming soon
+                    &nbsp;Live Demo
+                    <ArrowUpRight className="ml-1 size-5 transition-all duration-200 group-hover/1:translate-x-2 group-hover/1:rotate-45" />
                   </a>
                 </div>
                 <SubHeading>
@@ -260,9 +261,10 @@ export default function ResumePage() {
                     target="_blank"
                     rel="noreferrer"
                     href="https://venue-booking-msiksnis.netlify.app/"
-                    className="text-blue-600"
+                    className="group/2 flex text-blue-600"
                   >
-                    &nbsp;https://venue-booking-msiksnis.netlify.app/
+                    &nbsp; &nbsp;Live Demo
+                    <ArrowUpRight className="ml-1 size-5 transition-all duration-200 group-hover/2:translate-x-2 group-hover/2:rotate-45" />
                   </a>
                 </div>
                 <SubHeading>
