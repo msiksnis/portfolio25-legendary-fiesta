@@ -6,6 +6,26 @@ export default function PortfolioSection() {
     <div id="portfolio" className="space-y-6 pb-2">
       <BlurFade inView>
         <ProjectCard
+          projectLink="/project/creche"
+          demoLink="https://dog-daycare-demo-msiksnis.vercel.app/"
+          title="Dog Daycare Center Dashboard"
+          techTags={[
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "TanStack Query",
+            "Supabase",
+            "Prisma",
+            "NextAuth",
+            "Zustand",
+            "Resend",
+            "React Hook Form",
+            "And many more...",
+          ]}
+        />
+      </BlurFade>
+      <BlurFade inView delay={0.2} className="grid gap-6 sm:grid-cols-2">
+        <ProjectCard
           projectLink="/project/holidaze"
           demoLink="https://venue-booking-msiksnis.netlify.app/"
           repoLink="https://github.com/msiksnis/pe2-solid-parakeet"
@@ -17,16 +37,6 @@ export default function PortfolioSection() {
             "TanStack Router",
             "TanStack Query",
           ]}
-        />
-      </BlurFade>
-      <BlurFade inView delay={0.2} className="grid gap-6 sm:grid-cols-2">
-        <ProjectCard
-          projectLink="/project/auction-house"
-          demoLink="https://msiksnis-sp2-auction.vercel.app/"
-          repoLink="https://github.com/msiksnis/msiksnis-sp2-auction"
-          title="Auction House"
-          techTags={["Next.js", "TailwindCSS", "TypeScript"]}
-          className="sm:px-6"
         />
         <ProjectCard
           projectLink="/project/e-commerce"

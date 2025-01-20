@@ -11,6 +11,7 @@ export interface TechTag {
 export interface ProjectData {
   title: string;
   note: string;
+  schoolNote?: string;
   description: string;
   techTags: TechTag[];
   demoLink: string;

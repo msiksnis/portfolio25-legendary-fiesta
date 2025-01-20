@@ -1,4 +1,4 @@
-import { GraduationCap } from "lucide-react";
+import { InfoIcon } from "lucide-react";
 
 import ProjectLinkButton from "@/components/ProjectLinkButton";
 import BlurFade from "@/components/ui/blur-fade";
@@ -7,19 +7,20 @@ import { ProjectData, TechTag } from "@/app/(main)/project/utils/projectTypes";
 export default function ProjectDetails({
   title,
   note,
+  schoolNote,
   description,
   techTags,
   demoLink,
   repoLink,
 }: ProjectData) {
   return (
-    <div className="mx-auto max-w-6xl space-y-6">
+    <div className="mx-auto max-w-6xl space-y-8">
       <BlurFade className="max-w-2xl">
         <h1 className="max-w-4xl text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
           {title}
         </h1>
-        <p className="note flex items-start gap-2 text-balance pt-2 text-sm italic text-gray-400">
-          <GraduationCap size={20} />
+        <p className="note flex items-start gap-2 text-pretty pt-4 italic text-gray-400">
+          <InfoIcon size={24} />
           {note}
         </p>
       </BlurFade>

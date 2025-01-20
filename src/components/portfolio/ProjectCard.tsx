@@ -8,7 +8,7 @@ import { MagicCard } from "../ui/magic-card";
 interface ProjectCardProps {
   projectLink: string;
   demoLink: string;
-  repoLink: string;
+  repoLink?: string | undefined;
   title: string;
   description?: string;
   techTags?: string[];
@@ -47,12 +47,14 @@ export default function ProjectCard({
               className="text-xl"
               arrowSize={28}
             />
-            <ProjectLinkButton
-              buttonText="GitHub Repo"
-              href={repoLink}
-              className="text-xl"
-              arrowSize={28}
-            />
+            {repoLink && (
+              <ProjectLinkButton
+                buttonText="GitHub Repo"
+                href={repoLink}
+                className="text-xl"
+                arrowSize={28}
+              />
+            )}
           </div>
           <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
             {title}

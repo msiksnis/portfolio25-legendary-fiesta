@@ -2,14 +2,10 @@ import { useCallback, useMemo, useState } from "react";
 import { ProjectData } from "./projectTypes";
 
 export function useProjectFeatures(features?: ProjectData["features"]) {
-  const [expandedIndices, setExpandedIndices] = useState<boolean[]>([]);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const toggleExpanded = useCallback((index: number) => {
-    setExpandedIndices((prev) => {
-      const newStates = [...prev];
-      newStates[index] = !newStates[index];
-      return newStates;
-    });
+    setExpandedIndex((prev) => (prev === index ? null : index));
   }, []);
 
   const items = useMemo(
@@ -17,9 +13,9 @@ export function useProjectFeatures(features?: ProjectData["features"]) {
       features?.map((feat, index) => ({
         ...feat,
         index,
-        isExpanded: expandedIndices[index] ?? false,
+        isExpanded: expandedIndex === index,
       })) || [],
-    [features, expandedIndices],
+    [features, expandedIndex],
   );
 
   return {
