@@ -7,7 +7,6 @@ import { ProjectData, TechTag } from "@/app/(main)/project/utils/projectTypes";
 export default function ProjectDetails({
   title,
   note,
-  schoolNote,
   description,
   techTags,
   demoLink,
