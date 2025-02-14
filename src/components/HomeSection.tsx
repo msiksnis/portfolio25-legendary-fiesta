@@ -1,7 +1,7 @@
 "use client";
 
 import { useContactFormStore } from "@/hooks/useContactFormStore";
-import Avatar from "./Avatar";
+// import Avatar from "./Avatar";
 import BlurFade from "./ui/blur-fade";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
