@@ -2,10 +2,9 @@
 
 import { useContactFormStore } from "@/hooks/useContactFormStore";
 import Avatar from "./Avatar";
+import BlurFade from "./ui/blur-fade";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
-import BlurFade from "./ui/blur-fade";
-import Image from "next/image";
 
 export default function HomeSection() {
   const setContactFormOpen = useContactFormStore(
