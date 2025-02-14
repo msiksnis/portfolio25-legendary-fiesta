@@ -91,7 +91,7 @@ export default function HomeSection() {
           </div>
         </MagicCard>
       </BlurFade>
-      <Avatar />
+      {/* <Avatar /> */}
     </div>
   );
 }
