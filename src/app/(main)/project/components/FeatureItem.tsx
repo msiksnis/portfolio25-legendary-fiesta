@@ -20,7 +20,6 @@ export function FeatureItem({
 }: FeatureItemProps) {
   return (
     <BlurFade
-      inView
       delay={(index / 4) * 0.1}
       className={cn("flex flex-col gap-2 rounded-lg border p-4", {
         "bg-gradient-to-br from-[#1f1f22] to-[#0A0A0D]": isExpanded,
