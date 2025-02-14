@@ -16,7 +16,7 @@ export default function ContactSection() {
   );
 
   return (
-    <BlurFade inView>
+    <BlurFade>
       <div
         id="contact"
         className="w-full rounded-2xl border border-border bg-gradient-to-t from-[#1f1f22] to-[#0A0A0D] sm:rounded-4xl"
@@ -29,7 +29,7 @@ export default function ContactSection() {
               just want to say Hi?
             </div>
             {contactFormOpen ? (
-              <BlurFade inView delay={0.2}>
+              <BlurFade delay={0.2}>
                 <ContactForm
                   setContactFormOpen={setContactFormOpen}
                   setIsMessageSent={setIsMessageSent}

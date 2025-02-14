@@ -3,8 +3,8 @@ import ProjectCard from "./ProjectCard";
 
 export default function PortfolioSection() {
   return (
-    <div id="portfolio" className="space-y-6 pb-2">
-      <BlurFade inView>
+    <div id="portfolio" className="space-y-6 py-2">
+      <BlurFade>
         <ProjectCard
           projectLink="/project/creche"
           demoLink="https://dog-daycare-demo-msiksnis.vercel.app/"
@@ -24,7 +24,7 @@ export default function PortfolioSection() {
           ]}
         />
       </BlurFade>
-      <BlurFade inView delay={0.2} className="grid gap-6 sm:grid-cols-2">
+      <BlurFade delay={0.2} className="grid gap-6 sm:grid-cols-2">
         <ProjectCard
           projectLink="/project/holidaze"
           demoLink="https://venue-booking-msiksnis.netlify.app/"

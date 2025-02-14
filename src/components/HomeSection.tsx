@@ -5,6 +5,7 @@ import Avatar from "./Avatar";
 import { MagicCard } from "./ui/magic-card";
 import ShinyButton from "./ui/shiny-button";
 import BlurFade from "./ui/blur-fade";
+import Image from "next/image";
 
 export default function HomeSection() {
   const setContactFormOpen = useContactFormStore(
@@ -68,7 +69,6 @@ export default function HomeSection() {
           </MagicCard>
         </BlurFade>
       </div>
-      <Avatar />
       <BlurFade
         delay={0.4}
         className="w-full rounded-2xl border border-border bg-gradient-to-b from-[#0A0A0D] to-[#1b1b1d] sm:max-h-[435px] sm:rounded-4xl"
@@ -77,7 +77,7 @@ export default function HomeSection() {
           <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-14 md:pt-10">
             <div className="w-fit text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               <p className="">
-                A proud graduate of Bethel School of{" "}
+                I am graduate of Bethel School of{" "}
                 <br className="hidden sm:block" />
                 Technology (2019) and Noroff School{" "}
                 <br className="hidden sm:block" />
@@ -92,6 +92,7 @@ export default function HomeSection() {
           </div>
         </MagicCard>
       </BlurFade>
+      <Avatar />
     </div>
   );
 }
