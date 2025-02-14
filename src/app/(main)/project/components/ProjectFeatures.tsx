@@ -14,7 +14,7 @@ export default function ProjectFeatures({ features }: Partial<ProjectData>) {
   return (
     <div className="mx-auto max-w-6xl">
       <div className="flex max-w-3xl flex-col space-y-1 pb-2 pt-10">
-        <BlurFade inView>
+        <BlurFade>
           <h2 className="pb-2 text-2xl">Features</h2>
         </BlurFade>
 

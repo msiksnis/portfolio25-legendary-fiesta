@@ -76,7 +76,7 @@ export default function HomeSection() {
           <div className="flex h-full items-center justify-center px-4 py-6 sm:aspect-[2/1] sm:p-0 sm:py-0 sm:pt-14 md:pt-10">
             <div className="w-fit text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl">
               <p className="">
-                I am graduate of Bethel School of{" "}
+                A graduate of Bethel School of{" "}
                 <br className="hidden sm:block" />
                 Technology (2019) and Noroff School{" "}
                 <br className="hidden sm:block" />
